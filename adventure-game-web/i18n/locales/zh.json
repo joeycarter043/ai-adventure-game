@@ -1,5 +1,55 @@
 {
   "welcome": "欢迎来到货运剧本杀",
   "home": "首页",
-  "description": "一个基于 Nuxt 4 的国际货运代理剧本杀游戏平台"
+  "description": "一个基于 Nuxt 4 的国际货运代理剧本杀游戏平台",
+  "home_page": {
+    "welcome_back": "欢迎回来，张同学",
+    "learning_overview": "学习概览",
+    "total_knowledge_points": "知识点总数",
+    "total_skill_points": "技能点总数",
+    "total_scenarios": "剧本总数",
+    "skill_level": "技能等级",
+    "senior_technician": "高级技师",
+    "recommended_scenarios": "推荐剧本",
+    "view_all": "查看全部",
+    "knowledge_learning": "知识学习",
+    "latest_updates": "最新动态",
+    "start": "开始",
+    "minutes": "分钟",
+    "score": "分",
+    "knowledge_points": "个知识点",
+    "scenarios": {
+      "customs_declaration": "报关风云",
+      "sea_waybill": "海运提单之谜",
+      "air_urgent": "空运紧急任务"
+    },
+    "scenario_descriptions": {
+      "customs_declaration": "深入了解报关流程，处理各种复杂的报关手续，体验真实的海关工作场景。",
+      "sea_waybill": "作为一名新手货运代理，你需要处理一份复杂的海运提单，解开其中的谜团，确保货物顺利通关。",
+      "air_urgent": "处理紧急空运货物，协调各方资源，在有限时间内完成高难度的运输任务。"
+    },
+    "learning_categories": {
+      "sea_knowledge": "海运知识",
+      "air_process": "空运流程",
+      "customs_procedures": "报关手续",
+      "warehouse_management": "仓储管理"
+    },
+    "updates": [
+      {
+        "title": "新增剧本：跨境电商物流挑战",
+        "description": "体验最新的跨境电商物流模式，学习相关的国际货运知识。",
+        "time": "2 小时前"
+      },
+      {
+        "title": "系统优化：提升学习体验",
+        "description": "优化了游戏加载速度，新增了更多的学习提示功能。",
+        "time": "1 天前"
+      },
+      {
+        "title": "知识题库更新",
+        "description": "新增了 20 个关于国际贸易术语的知识点。",
+        "time": "3 天前"
+      }
+    ]
+  }
 }

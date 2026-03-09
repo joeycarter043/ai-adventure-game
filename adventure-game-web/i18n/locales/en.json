@@ -1,5 +1,55 @@
 {
-  "welcome": "Welcome to Freight Mystery",
+  "welcome": "Welcome to Freight Mystery Game",
   "home": "Home",
-  "description": "A Nuxt 4 based freight forwarding mystery game platform"
+  "description": "An international freight agency mystery game platform based on Nuxt 4",
+  "home_page": {
+    "welcome_back": "Welcome back, Student Zhang",
+    "learning_overview": "Learning Overview",
+    "total_knowledge_points": "Total Knowledge Points",
+    "total_skill_points": "Total Skill Points",
+    "total_scenarios": "Total Scenarios",
+    "skill_level": "Skill Level",
+    "senior_technician": "Senior Technician",
+    "recommended_scenarios": "Recommended Scenarios",
+    "view_all": "View All",
+    "knowledge_learning": "Knowledge Learning",
+    "latest_updates": "Latest Updates",
+    "start": "Start",
+    "minutes": "min",
+    "score": "pts",
+    "knowledge_points": "points",
+    "scenarios": {
+      "customs_declaration": "Customs Declaration",
+      "sea_waybill": "Sea Waybill Mystery",
+      "air_urgent": "Air Urgent Mission"
+    },
+    "scenario_descriptions": {
+      "customs_declaration": "Learn about customs declaration processes, handle complex customs procedures, and experience real customs work scenarios.",
+      "sea_waybill": "As a new freight agent, you need to handle a complex sea waybill, solve the mysteries, and ensure smooth cargo clearance.",
+      "air_urgent": "Handle urgent air cargo, coordinate resources, and complete high-difficulty transportation tasks within limited time."
+    },
+    "learning_categories": {
+      "sea_knowledge": "Sea Knowledge",
+      "air_process": "Air Process",
+      "customs_procedures": "Customs Procedures",
+      "warehouse_management": "Warehouse Management"
+    },
+    "updates": [
+      {
+        "title": "New Scenario: Cross-border E-commerce Logistics Challenge",
+        "description": "Experience the latest cross-border e-commerce logistics models and learn related international freight knowledge.",
+        "time": "2 hours ago"
+      },
+      {
+        "title": "System Optimization: Enhanced Learning Experience",
+        "description": "Optimized game loading speed and added more learning hint features.",
+        "time": "1 day ago"
+      },
+      {
+        "title": "Knowledge Question Bank Update",
+        "description": "Added 20 new knowledge points about international trade terms.",
+        "time": "3 days ago"
+      }
+    ]
+  }
 }
