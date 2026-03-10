@@ -37,6 +37,11 @@ const props = defineProps<{
           </div>
           <div class="meta-item">
             <img class="meta-icon score-icon" :src="iconScore" alt="" />
+            <span class="meta-icon duration-icon"></span>
+            <span>{{ props.duration }} {{ $t('home_page.minutes') }}</span>
+          </div>
+          <div class="meta-item">
+            <span class="meta-icon score-icon"></span>
             <span>{{ props.score }} {{ $t('home_page.score') }}</span>
           </div>
           <button class="start-button">{{ $t('home_page.start') }}</button>
@@ -149,6 +154,16 @@ const props = defineProps<{
       &.score-icon {
         width: 18px;
         height: 18px;
+
+      border-radius: 50%;
+
+      &.duration-icon {
+        background: linear-gradient(135deg, #17a0fc, #07548c);
+      }
+
+      &.score-icon {
+        background: linear-gradient(135deg, #fead00, #ff6b00);
+
       }
     }
 

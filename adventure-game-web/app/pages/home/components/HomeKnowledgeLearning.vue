@@ -6,25 +6,29 @@ const categories = ref([
     id: 1,
     title: t('home_page.learning_categories.sea_knowledge'),
     count: 12,
-    icon: '@/app/pages/home/assets/slices/icon_shipping_by_sea.png'
+    icon: '@/app/pages/home/assets/slices/icon_shipping_by_sea.png',
+    iconColor: '#00a0e9'
   },
   {
     id: 2,
     title: t('home_page.learning_categories.air_process'),
     count: 8,
-    icon: '@/app/pages/home/assets/slices/icon_air_freight.png'
+    icon: '@/app/pages/home/assets/slices/icon_air_freight.png',
+    iconColor: '#07548c'
   },
   {
     id: 3,
     title: t('home_page.learning_categories.customs_procedures'),
     count: 8,
-    icon: '@/app/pages/home/assets/slices/icon_customs_declaration.png'
+    icon: '@/app/pages/home/assets/slices/icon_customs_declaration.png',
+    iconColor: '#07548c'
   },
   {
     id: 4,
     title: t('home_page.learning_categories.warehouse_management'),
     count: 10,
-    icon: '@/app/pages/home/assets/slices/icon_time.png'
+    icon: '@/app/pages/home/assets/slices/icon_time.png',
+    iconColor: '#07548c'
   }
 ])
 </script>
@@ -50,6 +54,7 @@ const categories = ref([
           <div class="category-icon">
             <img :src="category.icon" alt="" />
           </div>
+          <div class="category-icon" :style="{ background: category.iconColor }"></div>
           <div class="category-info">
             <span class="category-title">{{ category.title }}</span>
             <span class="category-count">{{ category.count }} {{ $t('home_page.knowledge_points') }}</span>
@@ -161,6 +166,16 @@ const categories = ref([
         width: 28px;
         height: 28px;
         object-fit: contain;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+
+      &::before {
+        content: '';
+        width: 28px;
+        height: 28px;
+        background: rgba(255, 255, 255, 0.9);
+        border-radius: 8px;
       }
     }
 
