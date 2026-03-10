@@ -166,9 +166,7 @@ const categories = ref([
         width: 28px;
         height: 28px;
         object-fit: contain;
-      display: flex;
-      align-items: center;
-      justify-content: center;
+      }
 
       &::before {
         content: '';

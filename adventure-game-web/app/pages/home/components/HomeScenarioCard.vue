@@ -154,7 +154,7 @@ const props = defineProps<{
       &.score-icon {
         width: 18px;
         height: 18px;
-
+      }
       border-radius: 50%;
 
       &.duration-icon {
