@@ -26,6 +26,11 @@ export default defineNuxtConfig({
 
   modules: ['@nuxtjs/i18n'],
 
+  // 配置组件自动导入路径
+  components: [
+    '~/pages/home/components',
+  ],
+
   // ===========================================
   // 运行时配置
   // 环境变量通过 runtimeConfig 暴露给客户端
