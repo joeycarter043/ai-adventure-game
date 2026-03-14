@@ -1,220 +1,166 @@
+<template>
+  <div class="latest-updates">
+    <SectionTitleBar 
+      :style="{ '--title-bg-size': 'auto 100%' }"
+      :title="t('home_page.latest_updates')">
+      <template #right>
+        <span class="view-all-link">{{ t('home_page.view_all') }}&nbsp;&nbsp;→</span>
+      </template>
+    </SectionTitleBar>
+
+    <div class="updates-outer">
+      <div
+        v-for="(update, index) in updates"
+        :key="update.id"
+        class="update-card"
+        :class="{ 'first-card': index === 0 }"
+      >
+        <div class="card-header">
+          <span class="dot" :style="{ backgroundColor: update.color, color: update.color }"></span>
+          <div class="text-block">
+            <span class="update-title">{{ update.title }}</span>
+            <span class="update-desc">{{ update.description }}</span>
+          </div>
+        </div>
+        <span class="update-time">{{ update.time }}</span>
+      </div>
+    </div>
+  </div>
+</template>
+
 <script setup lang="ts">
+import SectionTitleBar from '@/components/base/SectionTitleBar.vue'
+
 const { t } = useI18n()
 
-const updates = ref([
+const updates = [
   {
     id: 1,
     title: t('home_page.updates[0].title'),
     description: t('home_page.updates[0].description'),
     time: t('home_page.updates[0].time'),
-    type: 'new'
+    color: '#ba00ff'
   },
   {
     id: 2,
     title: t('home_page.updates[1].title'),
     description: t('home_page.updates[1].description'),
     time: t('home_page.updates[1].time'),
-    type: 'optimization'
+    color: '#00ff0c'
   },
   {
     id: 3,
     title: t('home_page.updates[2].title'),
     description: t('home_page.updates[2].description'),
     time: t('home_page.updates[2].time'),
-    type: 'update'
+    color: '#ffde00'
   }
-])
-
-const getTypeColor = (type: string) => {
-  switch (type) {
-    case 'new':
-      return '#ba00ff'
-    case 'optimization':
-      return '#00ff08'
-    case 'update':
-      return '#ffde00'
-    default:
-      return '#ba00ff'
-  }
-}
+]
 </script>
-
-<template>
-  <div class="latest-updates">
-    <div class="section-header">
-      <div class="title-bar"></div>
-      <div class="title-wrapper">
-        <span class="section-title">{{ t('home_page.latest_updates') }}</span>
-      </div>
-      <span class="view-all-link">{{ t('home_page.view_all') }} &nbsp;&nbsp;→</span>
-    </div>
-
-    <div class="updates-container">
-      <div
-        v-for="(update, index) in updates"
-        :key="update.id"
-        class="update-item"
-      >
-        <div class="update-content" :class="{ 'first-item': index === 0 }">
-          <div class="update-info">
-            <div class="update-header">
-              <div
-                class="type-indicator"
-                :style="{ backgroundColor: getTypeColor(update.type) }"
-              ></div>
-              <div class="text-content">
-                <span class="update-title">{{ update.title }}</span>
-                <span class="update-description">{{ update.description }}</span>
-              </div>
-            </div>
-            <span class="update-time">{{ update.time }}</span>
-          </div>
-        </div>
-      </div>
-    </div>
-  </div>
-</template>
 
 <style scoped lang="scss">
 .latest-updates {
-  margin: 28px 0 0 39px;
+  padding-bottom: 60px;
+  width: auto;
 }
 
-.section-header {
+.view-all-link {
+  color: #ffffff;
+  font-size: 18px;
+  font-weight: 500;
+  margin-right: 20px;
+  font-family: 'SourceHanSansCN-Medium', sans-serif;
+  white-space: nowrap;
+  cursor: pointer;
+  transition: opacity 0.2s;
+
+  &:hover { opacity: 0.75; }
+}
+
+.updates-outer {
   display: flex;
-  align-items: center;
-  width: 1739px;
-  height: 35px;
-
-  .title-bar {
-    background-color: #17a0fc;
-    width: 9px;
-    height: 35px;
-    border-radius: 2px;
-  }
-
-  .title-wrapper {
-    margin-left: 5px;
-
-    .section-title {
-      background: linear-gradient(180deg, #ffffff 0%, #ffffff 0%, #acdbff 98.535156%, #acdbff 100%);
-      -webkit-background-clip: text;
-      -webkit-text-fill-color: transparent;
-      background-clip: text;
-      width: 92px;
-      height: 21px;
-      color: #000000;
-      font-size: 22px;
-      white-space: nowrap;
-      line-height: 25px;
-      margin: 7px 0 0 11px;
-    }
-  }
-
-  .view-all-link {
-    color: #ffffff;
-    font-size: 18px;
-    font-weight: 500;
-    font-family: 'SourceHanSansCN-Medium', sans-serif;
-    white-space: nowrap;
-    line-height: 28px;
-    margin: 9px 0 0 1221px;
-    cursor: pointer;
-
-    &:hover {
-      opacity: 0.8;
-    }
-  }
-}
-
-.updates-container {
-  width: 1681px;
-  height: 491px;
+  flex-direction: column;
+  gap: 20px;
+  margin: 20px;
+  padding: 30px;
   border: 1px solid #07548c;
-  background-color: rgba(4, 56, 113, 0);
-  margin: 37px 0 671px 104px;
-  border-radius: 14px;
+  border-radius: 4px;
+  box-sizing: border-box;
+  background: rgba(1, 32, 67, 0.2);
 }
 
-.update-item {
-  .update-content {
-    background-color: rgba(4, 56, 113, 0.34);
-    border-radius: 14px;
-    border: 1px solid #00a0e9;
-    width: 1599px;
-    height: 140px;
-    margin: 43px 0 0 41px;
-    transition: all 0.3s ease;
+.update-card {
+  background: rgba(4, 56, 113, 0.34);
+  border-radius: 14px;
+  border: 1px solid rgba(0, 160, 233, 0.5); /* 降低默认边框亮度 */
+  padding: 20px;
+  box-sizing: border-box;
+  transition: all 0.25s ease;
 
-    &:hover {
-      background-color: rgba(4, 56, 113, 0.5);
-      border-color: #17a0fc;
+  &:hover {
+    background: rgba(4, 56, 113, 0.55);
+    border-color: #17a0fc;
+    transform: translateX(4px); /* 悬停微动效果 */
+  }
+
+  .card-header {
+    display: flex;
+    align-items: flex-start;
+    gap: 16px;
+
+    .dot {
+      width: 16px;
+      height: 16px;
+      border-radius: 50%;
+      flex-shrink: 0;
+      margin-top: 6px;
+      /* 使用 currentColor 配合内联 style 里的 color 实现发光 */
+      box-shadow: 0 0 10px currentColor; 
     }
 
-    &.first-item {
-      margin-top: 43px;
-    }
+    .text-block {
+      display: flex;
+      flex-direction: column;
+      gap: 12px;
+      overflow: hidden;
 
-    &:not(:first-child) {
-      margin-top: 31px;
-    }
-
-    .update-info {
-      .update-header {
-        display: flex;
-        align-items: flex-start;
-        width: 496px;
-        height: 57px;
-        margin: 25px 0 0 26px;
-
-        .type-indicator {
-          border-radius: 50%;
-          width: 16px;
-          height: 16px;
-          margin-top: 5px;
-          box-shadow: 0 0 8px currentColor;
-        }
-
-        .text-content {
-          display: flex;
-          flex-direction: column;
-          width: 463px;
-          height: 57px;
-          margin-left: 16px;
-
-          .update-title {
-            color: #ffffff;
-            font-size: 24px;
-            font-weight: 500;
-            font-family: 'SourceHanSansCN-Medium', sans-serif;
-            white-space: nowrap;
-            line-height: 24px;
-          }
-
-          .update-description {
-            text-shadow: 0px 0px 8px rgba(0, 210, 255, 0.88);
-            color: #dddddd;
-            font-size: 18px;
-            font-weight: 500;
-            font-family: 'SourceHanSansCN-Medium', sans-serif;
-            white-space: nowrap;
-            line-height: 18px;
-            margin-top: 15px;
-          }
-        }
-      }
-
-      .update-time {
-        text-shadow: 0px 0px 8px rgba(0, 210, 255, 0.88);
-        color: #999999;
-        font-size: 16px;
+      .update-title {
+        color: #ffffff;
+        font-size: 22px; /* 稍微缩小以防长标题溢出 */
         font-weight: 500;
         font-family: 'SourceHanSansCN-Medium', sans-serif;
         white-space: nowrap;
-        line-height: 16px;
-        margin: 19px 0 23px 59px;
+        line-height: 1.2;
+      }
+
+      .update-desc {
+        text-shadow: 0 0 8px rgba(0, 210, 255, 0.88);
+        color: #cccccc;
+        font-size: 16px;
+        font-weight: 500;
+        font-family: 'SourceHanSansCN-Medium', sans-serif;
+        line-height: 1.4;
+        /* 描述文字如果太长可以允许换行或省略 */
+        white-space: normal; 
+        display: -webkit-box;
+        -webkit-line-clamp: 1;
+        -webkit-box-orient: vertical;
+        overflow: hidden;
       }
     }
   }
+
+  .update-time {
+    display: block;
+    text-shadow: 0 0 8px rgba(0, 210, 255, 0.88);
+    color: #888888;
+    font-size: 14px;
+    font-weight: 500;
+    font-family: 'SourceHanSansCN-Medium', sans-serif;
+    white-space: nowrap;
+    line-height: 1;
+    margin: 15px 0 20px 32px; /* 缩减左间距以适应小屏 */
+  }
 }
+
 </style>

@@ -1,0 +1,20 @@
+// app/assets/scss/_mixins.scss
+
+@mixin auto-hide-scrollbar($color: rgba(23, 160, 252, 0.4)) {
+  overflow-y: auto;
+  scrollbar-gutter: stable;
+
+  &::-webkit-scrollbar { width: 4px; }
+  &::-webkit-scrollbar-track { background: transparent; }
+  &::-webkit-scrollbar-thumb {
+    background: rgba($color, 0); 
+    border-radius: 2px;
+    transition: background 0.4s ease-in-out;
+  }
+
+  &:hover {
+    &::-webkit-scrollbar-thumb {
+      background: $color;
+    }
+  }
+}

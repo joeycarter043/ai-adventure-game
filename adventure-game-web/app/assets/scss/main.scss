@@ -1,0 +1,59 @@
+/* app/assets/scss/main.scss */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+html, body {
+  width: 100%;
+  /* 解决小于 1440px 出现横向滚动条的关键 */
+  min-height: 100vh;
+  min-width: 1440px; 
+  overflow-x: auto; 
+  overflow-y: auto;
+  background-color: #001529;
+}
+
+#__nuxt {
+  min-height: 100vh;
+}
+
+/* app/assets/scss/main.scss */
+
+.custom-scrollbar-auto-hide {
+  overflow-y: auto;
+  min-height: 0;
+  /* 核心：防止滚动条显示/消失时内容水平抖动 */
+  scrollbar-gutter: stable; 
+
+  &::-webkit-scrollbar {
+    width: 4px;
+  }
+  
+  &::-webkit-scrollbar-track {
+    background: transparent;
+  }
+
+  &::-webkit-scrollbar-thumb {
+    /* 默认透明 */
+    background: rgba(23, 160, 252, 0); 
+    border-radius: 2px;
+    /* 重点：必须要在这里写 transition，才能保证移出时的淡出效果 */
+    transition: background 0.4s ease-in-out; 
+  }
+
+  &:hover {
+    &::-webkit-scrollbar-thumb {
+      /* 悬浮显示 */
+      background: rgba(23, 160, 252, 0.4); 
+    }
+  }
+
+  /* Firefox 兼容性：虽然不能实现 0.4s 动画，但可以实现显示/隐藏逻辑 */
+  scrollbar-width: thin;
+  scrollbar-color: transparent transparent;
+  &:hover {
+    scrollbar-color: rgba(23, 160, 252, 0.4) transparent;
+  }
+}

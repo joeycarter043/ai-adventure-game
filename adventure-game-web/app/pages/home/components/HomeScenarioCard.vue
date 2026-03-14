@@ -1,213 +1,211 @@
-<script setup lang="ts">
-import iconDuration from '../assets/slices/icon_duration.png'
-import iconScore from '../assets/slices/icon_score.png'
-
-const props = defineProps<{
-  title: string
-  description: string
-  duration: string
-  score: string
-}>()
-</script>
-
 <template>
   <div class="scenario-card">
-    <!-- 卡片标题标签 -->
-    <div class="card-title">
+    <div class="card-title-tag">
       <span>{{ props.title }}</span>
     </div>
 
-    <!-- 卡片主体 -->
+    <div class="star-rating-indicator">
+      <img
+        v-for="i in 5"
+        :key="i"
+        :src="i <= filledStars ? iconStarFull : iconStarEmpty"
+        class="rating-star-icon"
+        alt="star"
+      />
+    </div>
+
     <div class="card-body">
-      <!-- 缩略图指示器 -->
-      <div class="thumbnail-indicator">
-        <span class="thumb-dot active"></span>
-        <span class="thumb-dot"></span>
-        <span class="thumb-dot"></span>
-        <span class="thumb-dot"></span>
-        <span class="thumb-dot"></span>
+      <div class="top-divider"></div>
+
+      <div class="meta-row">
+        <div class="meta-item">
+          <img class="meta-icon" :src="iconClock" alt="" />
+          <span>{{ props.duration }}{{ $t('home_page.minutes') }}</span>
+        </div>
+        <div class="meta-item rating-item">
+          <img class="meta-icon" :src="iconStarEmpty" alt="" />
+          <span>{{ props.score }}{{ $t('home_page.score') }}</span>
+        </div>
+        <button class="start-btn">{{ $t('home_page.start') }}</button>
       </div>
 
-      <div class="card-content">
-        <!-- 时长和评分 -->
-        <div class="meta-info">
-          <div class="meta-item">
-            <img class="meta-icon duration-icon" :src="iconDuration" alt="" />
-            <span>{{ props.duration }} {{ $t('home_page.minutes') }}</span>
+      <div class="desc-container">
+        <div 
+          class="desc-box" 
+          :style="{ backgroundImage: `url(${props.cover})` }"
+        >
+          <div class="text-overlay">
+            <p>{{ props.description }}</p>
           </div>
-          <div class="meta-item">
-            <img class="meta-icon score-icon" :src="iconScore" alt="" />
-            <span class="meta-icon duration-icon"></span>
-            <span>{{ props.duration }} {{ $t('home_page.minutes') }}</span>
-          </div>
-          <div class="meta-item">
-            <span class="meta-icon score-icon"></span>
-            <span>{{ props.score }} {{ $t('home_page.score') }}</span>
-          </div>
-          <button class="start-button">{{ $t('home_page.start') }}</button>
-        </div>
-
-        <!-- 描述文本 -->
-        <div class="description-box">
-          <p>{{ props.description }}</p>
         </div>
       </div>
     </div>
   </div>
 </template>
 
+<script setup lang="ts">
+import { computed } from 'vue'
+import iconClock from '@/assets/img/icon_clock.png'
+import iconStarFull from '@/assets/img/icon_star_full.png'
+import iconStarEmpty from '@/assets/img/icon_star_empty.png'
+
+const props = defineProps<{
+  title: string
+  description: string
+  duration: string
+  score: string
+  cover: string
+}>()
+
+// 根据分值计算星星数量（例如 4.9 -> 5颗实心；3.2 -> 3颗实心）
+const filledStars = computed(() => {
+  const n = parseFloat(props.score)
+  return isNaN(n) ? 0 : Math.round(n)
+})
+</script>
+
 <style scoped lang="scss">
 .scenario-card {
   position: relative;
-  width: 543px;
-  height: 395px;
-  margin-top: 4px;
+  width: 100%;
+  max-width: 543px;
+  height: 345px;
+  background: url('@/pages/home/assets/slices/bg_script_card.png') no-repeat;
+  background-size: 100% 100%;
 }
 
-.card-title {
+.card-title-tag {
   position: absolute;
-  top: 0;
+  top: 4px;
   left: 50%;
   transform: translateX(-50%);
-  width: 208px;
-  height: 28px;
-  background: linear-gradient(180deg, #ffffff 0%, #e0e0e0 100%);
-  border-radius: 4px 4px 0 0;
   display: flex;
   align-items: center;
   justify-content: center;
+  z-index: 3;
 
   span {
-    color: #163254;
+    color: #cbdcf0;
     font-size: 16px;
-    font-weight: 500;
-    font-family: 'SourceHanSansCN-Medium', sans-serif;
+    font-weight: bold;
     white-space: nowrap;
-    line-height: 16px;
+  }
+}
+
+/* 修改后的星级样式 */
+.star-rating-indicator {
+  position: absolute;
+  top: 22px; 
+  right: 12px;
+  display: flex;
+  gap: 2px;
+  z-index: 3;
+
+  .rating-star-icon {
+    width: 16px;
+    height: 16px;
+    object-fit: contain;
   }
 }
 
 .card-body {
   position: absolute;
-  top: 28px;
-  left: 0;
-  width: 100%;
-  height: calc(100% - 28px);
-}
-
-.thumbnail-indicator {
+  top: 44px;      
+  left: 7px;
+  right: 7px;
+  height: 280px;  
+  box-sizing: border-box;
   display: flex;
-  justify-content: center;
-  gap: 3px;
-  position: absolute;
-  top: 15px;
-  left: 50%;
-  transform: translateX(-50%);
-
-  .thumb-dot {
-    width: 15px;
-    height: 13px;
-    background: rgba(255, 255, 255, 0.3);
-    border-radius: 2px;
-
-    &.active {
-      background: #17a0fc;
-    }
-  }
+  flex-direction: column;
+  z-index: 2;
 }
 
-.card-content {
-  position: relative;
-  width: 529px;
-  height: 346px;
-  margin: 16px auto 0;
-  background: rgba(1, 32, 67, 0.62);
-  border: 3px solid #16568b;
-  border-radius: 4px;
+.top-divider {
+  width: 90%;
+  height: 2px;
+  background: linear-gradient(90deg, transparent 0%, #17a0fc 50%, transparent 100%);
+  margin: 0 auto;
 }
 
-.meta-info {
+.meta-row {
   display: flex;
   align-items: center;
-  width: 450px;
-  height: 26px;
-  margin: 25px auto 0;
-  padding: 0 37px;
-
+  padding: 15px 30px;
+  
   .meta-item {
     display: flex;
     align-items: center;
     color: #ffffff;
-    font-size: 14px;
-    font-family: 'SourceHanSansCN-Regular', sans-serif;
-
+    font-size: 12px;
+    
     .meta-icon {
-      width: 18px;
-      height: 18px;
-      margin-right: 5px;
-
-      &.duration-icon {
-        width: 18px;
-        height: 18px;
-      }
-
-      &.score-icon {
-        width: 18px;
-        height: 18px;
-      }
-      border-radius: 50%;
-
-      &.duration-icon {
-        background: linear-gradient(135deg, #17a0fc, #07548c);
-      }
-
-      &.score-icon {
-        background: linear-gradient(135deg, #fead00, #ff6b00);
-
-      }
+      width: 14px;
+      height: 14px;
+      margin-right: 4px;
     }
 
-    &:not(:first-child) {
-      margin-left: 28px;
+    &.rating-item {
+      margin-left: 15px;
     }
   }
 
-  .start-button {
-    background: linear-gradient(180deg, #28487a 0%, #163254 100%);
-    border: 1px solid #000000;
-    border-radius: 8px;
-    color: #ffffff;
-    font-size: 14px;
-    font-weight: 500;
-    font-family: 'SourceHanSansCN-Medium', sans-serif;
-    padding: 6px 20px;
+  .start-btn {
     margin-left: auto;
+    width: 56px;
+    height: 24px;
+    background: linear-gradient(180deg, #28487a 0%, #163254 100%);
+    border: 1px solid #17a0fc;
+    border-radius: 4px;
+    color: #fff;
+    font-size: 12px;
     cursor: pointer;
-    white-space: nowrap;
-    transition: all 0.3s ease;
-
-    &:hover {
-      background: linear-gradient(180deg, #3a5f8a 0%, #1e4264 100%);
-      border-color: #17a0fc;
-    }
+    &:hover { filter: brightness(1.2); }
   }
 }
 
-.description-box {
-  background: linear-gradient(180deg, #08386e 0%, rgba(8, 56, 110, 0.18) 100%);
-  height: 200px;
-  width: 452px;
-  margin: 15px auto 0;
-  padding: 27px 28px;
-  box-sizing: border-box;
+/* ─── 描述文字区域重构 ─── */
+.desc-container {
+  flex: 1;
+  margin: 0 30px;
+  overflow: hidden;
+  border-radius: 4px;
+}
+
+.desc-box {
+  width: 100%;
+  height: 100%;
+  background-size: cover; /* 确保图片覆盖整个区域 */
+  background-position: center;
+  position: relative;
+
+  .text-overlay {
+    position: absolute;
+    inset: 0;
+    padding: 20px; /* 这就是你要求的边距 */
+    box-sizing: border-box;
+    display: flex;
+    align-items: flex-start;
+  }
 
   p {
     color: #ffffff;
-    font-size: 16px;
-    font-weight: 500;
-    font-family: 'SourceHanSansCN-Medium', sans-serif;
-    line-height: 28px;
+    font-size: 15px;
+    line-height: 1.6;
     margin: 0;
+    text-shadow: 0 2px 4px rgba(0, 0, 0, 0.9);
+    display: -webkit-box;
+    -webkit-line-clamp: 5;
+    -webkit-box-orient: vertical;
+    overflow: hidden;
   }
+}
+
+/* 顶部装饰线微调 */
+.top-divider {
+  width: 80%;
+  height: 2px;
+  background: linear-gradient(90deg, transparent 0%, #17a0fc 50%, transparent 100%);
+  margin: 0 auto;
+  opacity: 0.6;
 }
 </style>

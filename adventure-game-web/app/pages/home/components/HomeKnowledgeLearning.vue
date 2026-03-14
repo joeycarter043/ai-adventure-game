@@ -1,63 +1,29 @@
-<script setup lang="ts">
-const { t } = useI18n()
-
-const categories = ref([
-  {
-    id: 1,
-    title: t('home_page.learning_categories.sea_knowledge'),
-    count: 12,
-    icon: '@/app/pages/home/assets/slices/icon_shipping_by_sea.png',
-    iconColor: '#00a0e9'
-  },
-  {
-    id: 2,
-    title: t('home_page.learning_categories.air_process'),
-    count: 8,
-    icon: '@/app/pages/home/assets/slices/icon_air_freight.png',
-    iconColor: '#07548c'
-  },
-  {
-    id: 3,
-    title: t('home_page.learning_categories.customs_procedures'),
-    count: 8,
-    icon: '@/app/pages/home/assets/slices/icon_customs_declaration.png',
-    iconColor: '#07548c'
-  },
-  {
-    id: 4,
-    title: t('home_page.learning_categories.warehouse_management'),
-    count: 10,
-    icon: '@/app/pages/home/assets/slices/icon_time.png',
-    iconColor: '#07548c'
-  }
-])
-</script>
-
 <template>
   <div class="knowledge-learning">
-    <div class="section-header">
-      <div class="title-wrapper">
-        <div class="title-bar"></div>
-        <span class="section-title">{{ t('home_page.knowledge_learning') }}</span>
-      </div>
-      <span class="view-all-link">{{ t('home_page.view_all') }} &nbsp;&nbsp;→</span>
-    </div>
+    <SectionTitleBar 
+      :style="{ '--title-bg-size': 'auto 100%' }"
+      :title="t('home_page.knowledge_learning')">
+      <template #right>
+        <span class="view-all-link">{{ t('home_page.view_all') }}&nbsp;&nbsp;→</span>
+      </template>
+    </SectionTitleBar>
 
     <div class="categories-container">
       <div
         v-for="category in categories"
         :key="category.id"
         class="category-card"
-        :class="{ 'first-card': category.id === 1 }"
+        :class="{ highlighted: category.highlighted }"
       >
         <div class="category-content">
-          <div class="category-icon">
-            <img :src="category.icon" alt="" />
+          <div class="icon-wrapper">
+            <img :src="category.icon" alt="" class="category-icon" />
           </div>
-          <div class="category-icon" :style="{ background: category.iconColor }"></div>
           <div class="category-info">
             <span class="category-title">{{ category.title }}</span>
-            <span class="category-count">{{ category.count }} {{ $t('home_page.knowledge_points') }}</span>
+            <span class="category-count">
+              {{ category.count }}{{ $t('home_page.knowledge_points') }}
+            </span>
           </div>
         </div>
       </div>
@@ -65,133 +31,135 @@ const categories = ref([
   </div>
 </template>
 
+<script setup lang="ts">
+import SectionTitleBar from '@/components/base/SectionTitleBar.vue'
+
+const { t } = useI18n()
+
+import iconSea from '../assets/slices/icon_shipping_by_sea.png'
+import iconAir from '../assets/slices/icon_air_freight.png'
+import iconCustoms from '../assets/slices/icon_customs_declaration.png'
+import iconWarehouse from '../assets/slices/icon_time.png'
+
+const categories = [
+  {
+    id: 1,
+    title: t('home_page.learning_categories.sea_knowledge'),
+    count: 12,
+    icon: iconSea,
+    highlighted: true
+  },
+  {
+    id: 2,
+    title: t('home_page.learning_categories.air_process'),
+    count: 8,
+    icon: iconAir,
+    highlighted: false
+  },
+  {
+    id: 3,
+    title: t('home_page.learning_categories.customs_procedures'),
+    count: 8,
+    icon: iconCustoms,
+    highlighted: false
+  },
+  {
+    id: 4,
+    title: t('home_page.learning_categories.warehouse_management'),
+    count: 10,
+    icon: iconWarehouse,
+    highlighted: false
+  }
+]
+</script>
+
 <style scoped lang="scss">
 .knowledge-learning {
-  margin: 29px 0 0 39px;
+  width: auto;
 }
 
-.section-header {
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-  width: 1739px;
-  height: 35px;
+.view-all-link {
+  color: #ffffff;
+  font-size: 18px;
+  font-weight: 500;
+  margin-right: 20px;
+  font-family: 'SourceHanSansCN-Medium', sans-serif;
+  white-space: nowrap;
+  cursor: pointer;
+  transition: opacity 0.2s;
 
-  .title-wrapper {
-    display: flex;
-    align-items: center;
-
-    .title-bar {
-      background-color: #17a0fc;
-      width: 9px;
-      height: 35px;
-      border-radius: 2px;
-    }
-
-    .section-title {
-      background: linear-gradient(180deg, #ffffff 0%, #ffffff 0%, #acdbff 98.535156%, #acdbff 100%);
-      -webkit-background-clip: text;
-      -webkit-text-fill-color: transparent;
-      background-clip: text;
-      width: 92px;
-      height: 21px;
-      color: #000000;
-      font-size: 22px;
-      white-space: nowrap;
-      line-height: 25px;
-      margin: 8px 0 0 25px;
-    }
-  }
-
-  .view-all-link {
-    color: #ffffff;
-    font-size: 18px;
-    font-weight: 500;
-    font-family: 'SourceHanSansCN-Medium', sans-serif;
-    white-space: nowrap;
-    line-height: 28px;
-    margin-top: 9px;
-    cursor: pointer;
-
-    &:hover {
-      opacity: 0.8;
-    }
-  }
+  &:hover { opacity: 0.75; }
 }
 
+/* ─── 卡片容器优化 ─────────────────────────────────────── */
 .categories-container {
   display: flex;
-  justify-content: space-between;
-  width: 1681px;
-  height: 156px;
-  margin: 26px 0 0 105px;
+  gap: 20px;
+  width: 100%;
+  height: auto;
+  padding: 20px 20px 0 20px;
+  box-sizing: border-box;
 }
 
 .category-card {
-  width: 364px;
+  flex: 1;
+  min-width: 0;
   height: 156px;
   border-radius: 14px;
   border: 1px solid #07548c;
   background-color: rgba(4, 56, 113, 0.34);
-  transition: all 0.3s ease;
   cursor: pointer;
+  transition: transform 0.25s ease, box-shadow 0.25s ease;
+  display: flex;
+  align-items: center; /* 垂直居中内容 */
 
   &:hover {
     transform: translateY(-4px);
     box-shadow: 0 8px 24px rgba(0, 160, 233, 0.3);
   }
 
-  &.first-card {
+  &.highlighted {
     border-color: #00a0e9;
   }
 
   .category-content {
     display: flex;
     align-items: center;
-    width: 171px;
-    height: 59px;
-    margin: 49px 0 0 32px;
+    padding-left: 32px; /* 改用 padding 替代 margin-left */
+    width: 100%;
 
-    .category-icon {
+    .icon-wrapper {
       width: 56px;
       height: 56px;
       border-radius: 12px;
-      background-color: rgba(4, 56, 113, 0.5);
+      background: rgba(0, 100, 180, 0.35);
       display: flex;
       align-items: center;
       justify-content: center;
-      overflow: hidden;
+      flex-shrink: 0;
 
-      img {
-        width: 28px;
-        height: 28px;
+      .category-icon {
+        width: 36px;
+        height: 36px;
         object-fit: contain;
-      }
-
-      &::before {
-        content: '';
-        width: 28px;
-        height: 28px;
-        background: rgba(255, 255, 255, 0.9);
-        border-radius: 8px;
       }
     }
 
     .category-info {
       display: flex;
       flex-direction: column;
-      width: 96px;
-      height: 59px;
-      margin-left: 16px;
+      margin-left: 19px;
+      overflow: hidden; /* 防止文字溢出 */
 
       .category-title {
         text-shadow: 0px 0px 8px rgba(0, 210, 255, 0.88);
         color: #ffffff;
-        font-size: 24px;
+        font-size: 22px; /* 稍微缩小以适应更小的卡片 */
         font-weight: 500;
         font-family: 'SourceHanSansCN-Medium', sans-serif;
         white-space: nowrap;
-        line-height: 24px;
+        overflow: hidden;
+        text-overflow: ellipsis;
       }
 
       .category-count {
@@ -201,10 +169,18 @@ const categories = ref([
         font-weight: 500;
         font-family: 'SourceHanSansCN-Medium', sans-serif;
         white-space: nowrap;
-        line-height: 16px;
-        margin-top: 20px;
       }
     }
+  }
+}
+
+/* 窄屏适配 */
+@media (max-width: 1440px) {
+  .category-card .category-info .category-title {
+    font-size: 18px;
+  }
+  .categories-container {
+    gap: 12px;
   }
 }
 </style>

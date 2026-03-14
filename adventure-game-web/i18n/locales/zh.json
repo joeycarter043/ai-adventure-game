@@ -2,6 +2,13 @@
   "welcome": "欢迎来到货运剧本杀",
   "home": "首页",
   "description": "一个基于 Nuxt 4 的国际货运代理剧本杀游戏平台",
+  "header": {
+    "home": "首页",
+    "project_select": "项目选择",
+    "knowledge": "知识学习",
+    "profile": "个人中心",
+    "search_placeholder": "搜索剧本、知识点..."
+  },
   "home_page": {
     "welcome_back": "欢迎回来，张同学",
     "learning_overview": "学习概览",
@@ -18,6 +25,8 @@
     "minutes": "分钟",
     "score": "分",
     "knowledge_points": "个知识点",
+    "start_game": "开始游戏",
+    "my_studies": "我的学习",
     "scenarios": {
       "customs_declaration": "报关风云",
       "sea_waybill": "海运提单之谜",

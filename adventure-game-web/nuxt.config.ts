@@ -25,10 +25,10 @@ export default defineNuxtConfig({
   },
 
   modules: ['@nuxtjs/i18n'],
-
+  css: ['@/assets/scss/main.scss'],
   // 配置组件自动导入路径
-  components: [
-    '~/pages/home/components',
+  components: [ 
+    { path: '~/components', pathPrefix: false }
   ],
 
   // ===========================================
@@ -54,6 +54,13 @@ export default defineNuxtConfig({
   // Vite 开发服务器配置
   // ===========================================
   vite: {
+    css: {
+      preprocessorOptions: {
+        scss: {
+          additionalData: '@use "@/assets/scss/_mixins.scss" as *;'
+        }
+      }
+    },
     server: {
       // 开发服务器端口
       port: parseInt(process.env.PORT || '4000', 10),
