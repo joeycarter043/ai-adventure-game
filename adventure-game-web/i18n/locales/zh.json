@@ -128,5 +128,28 @@
       "classification_manual": "归类手册",
       "route_map": "航线地图"
     }
+  },
+  "project": {
+    "search_placeholder": "搜索项目名称...",
+    "difficulty": "难度",
+    "domain": "领域",
+    "sort": "排序",
+    "difficulty_all": "全部",
+    "difficulty_junior": "初级",
+    "difficulty_middle": "中级",
+    "difficulty_senior": "高级",
+    "domain_all": "全部",
+    "domain_sea": "海运",
+    "domain_air": "空运",
+    "domain_customs": "报关",
+    "domain_comprehensive": "综合",
+    "sort_latest": "最新",
+    "sort_hot": "最热门",
+    "sort_difficulty": "难度",
+    "sort_score": "评分",
+    "enroll_count": "人"
+  },
+  "common": {
+    "pagination_info": "共 {total} 条记录，第 {current}/{totalPages} 页"
   }
 }

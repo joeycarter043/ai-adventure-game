@@ -128,5 +128,28 @@
       "classification_manual": "Classification Manual",
       "route_map": "Route Map"
     }
+  },
+  "project": {
+    "search_placeholder": "Search projects...",
+    "difficulty": "Difficulty",
+    "domain": "Domain",
+    "sort": "Sort",
+    "difficulty_all": "All",
+    "difficulty_junior": "Junior",
+    "difficulty_middle": "Middle",
+    "difficulty_senior": "Senior",
+    "domain_all": "All",
+    "domain_sea": "Sea Freight",
+    "domain_air": "Air Freight",
+    "domain_customs": "Customs",
+    "domain_comprehensive": "Comprehensive",
+    "sort_latest": "Latest",
+    "sort_hot": "Popular",
+    "sort_difficulty": "Difficulty",
+    "sort_score": "Rating",
+    "enroll_count": "enrolled"
+  },
+  "common": {
+    "pagination_info": "Total {total} records, page {current}/{totalPages}"
   }
 }

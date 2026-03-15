@@ -67,7 +67,7 @@ import TopHeader from '@/components/TopHeader.vue'
   position: absolute;
   top: 0;
   bottom: 0;
-  width: 30px;
+  width: 40px;
   z-index: 5;
   pointer-events: none;
   &--left { 
@@ -90,7 +90,7 @@ import TopHeader from '@/components/TopHeader.vue'
   display: flex;
   flex-direction: column; /* 纵向排列 SubHeader 和 内容区 */
   position: relative;
-  padding: 0 15px 30px; 
+  padding: 0 30px 30px; 
   /* 内部三列布局将在具体的 Page 组件中实现 flex-grow */
 }
 

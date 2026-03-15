@@ -19,7 +19,7 @@ defineProps<{
 <style scoped lang="scss">
 .section-title-bar {
   height: 35px;
-  background: url('@/assets/img/bg_title_important_tips.png') no-repeat;
+  background: url('@/assets/img/bg_title.png') no-repeat;
   background-size: var(--title-bg-size, 100% 100%);
   display: flex;
   align-items: center;

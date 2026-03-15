@@ -16,8 +16,7 @@
   display: flex;
   align-items: center;
   justify-content: space-between;
-  padding: 0 30px; /* 与全局 Frame 的内边距对齐 */
-  background: rgba(0, 0, 0, 0.15); /* 淡淡的底色 */
+  padding: 0 30px;
   position: relative;
   z-index: 10;
 }

@@ -10,10 +10,10 @@
 </template>
 
 <script setup lang="ts">
-import TaskDetailSubHeader from './components/TaskDetailSubHeader.vue'
-import LeftSidebar from '../components/LeftSidebar.vue'
-import RightSidebar from '../components/RightSidebar.vue'
-import TaskDetailContent from './components/TaskDetailContent.vue'
+import TaskDetailSubHeader from '../../../../../components/modules/project/scenario/task-card/detail/TaskDetailSubHeader.vue'
+import LeftSidebar from '../../../../../components/modules/project/scenario/task-card/LeftSidebar.vue'
+import RightSidebar from '../../../../../components/modules/project/scenario/task-card/RightSidebar.vue'
+import TaskDetailContent from '../../../../../components/modules/project/scenario/task-card/detail/Content.vue'
 
 const { t } = useI18n()
 
