@@ -1,0 +1,235 @@
+{
+  "welcome": "欢迎来到货运剧本杀",
+  "home": "首页",
+  "description": "一个基于 Nuxt 4 的国际货运代理剧本杀游戏平台",
+  "header": {
+    "home": "首页",
+    "project_select": "项目选择",
+    "knowledge": "知识学习",
+    "profile": "个人中心",
+    "search_placeholder": "搜索剧本、知识点..."
+  },
+  "home_page": {
+    "welcome_back": "欢迎回来，张同学",
+    "learning_overview": "学习概览",
+    "total_knowledge_points": "知识点总数",
+    "total_skill_points": "技能点总数",
+    "total_scenarios": "剧本总数",
+    "skill_level": "技能等级",
+    "senior_technician": "高级技师",
+    "recommended_scenarios": "推荐剧本",
+    "view_all": "查看全部",
+    "knowledge_learning": "知识学习",
+    "latest_updates": "最新动态",
+    "start": "开始",
+    "minutes": "分钟",
+    "score": "分",
+    "knowledge_points": "个知识点",
+    "start_game": "开始游戏",
+    "my_studies": "我的学习",
+    "scenarios": {
+      "customs_declaration": "报关风云",
+      "sea_waybill": "海运提单之谜",
+      "air_urgent": "空运紧急任务"
+    },
+    "scenario_descriptions": {
+      "customs_declaration": "深入了解报关流程，处理各种复杂的报关手续，体验真实的海关工作场景。",
+      "sea_waybill": "作为一名新手货运代理，你需要处理一份复杂的海运提单，解开其中的谜团，确保货物顺利通关。",
+      "air_urgent": "处理紧急空运货物，协调各方资源，在有限时间内完成高难度的运输任务。"
+    },
+    "learning_categories": {
+      "sea_knowledge": "海运知识",
+      "air_process": "空运流程",
+      "customs_procedures": "报关手续",
+      "warehouse_management": "仓储管理"
+    },
+    "updates": [
+      {
+        "title": "新增剧本：跨境电商物流挑战",
+        "description": "体验最新的跨境电商物流模式，学习相关的国际货运知识。",
+        "time": "2 小时前"
+      },
+      {
+        "title": "系统优化：提升学习体验",
+        "description": "优化了游戏加载速度，新增了更多的学习提示功能。",
+        "time": "1 天前"
+      },
+      {
+        "title": "知识题库更新",
+        "description": "新增了 20 个关于国际贸易术语的知识点。",
+        "time": "3 天前"
+      }
+    ]
+  },
+  "scenario_task": {
+    "breadcrumb": {
+      "project_select": "项目选择",
+      "scenario_select": "剧本选择",
+      "current": "海运提单之谜",
+      "bill_template": "海运运单模板填制"
+    },
+    "important_tips": "重要提示",
+    "my_role": "我的角色",
+    "script_progress": "剧本进度",
+    "completed_tasks": "已完成{count}个任务",
+    "remaining_time": "剩余时间",
+    "elapsed_time": "已用时{minutes}分",
+    "task_list": "任务列表",
+    "clues_obtained": "已获得线索",
+    "toolbox": "工具箱",
+    "roles": {
+      "freight_manager": {
+        "title": "货代经理",
+        "desc": "负责整体协调和决策"
+      },
+      "operator": {
+        "title": "操作员",
+        "desc": "处理具体操作流程"
+      },
+      "customer_service": {
+        "title": "客服",
+        "desc": "处理客户咨询和投诉"
+      }
+    },
+    "minutes_unit": "分",
+    "actions": {
+      "continue": "继续",
+      "exit": "退出",
+      "back": "返回",
+      "ai_assistant": "AI小智助手",
+      "team_chat": "队内沟通",
+      "use_item": "使用道具"
+    },
+    "stories": {
+      "title": "剧情",
+      "current": "第一幕：接收到新订单",
+      "task_1": "任务一：订舱与运输",
+      "enter_task": "进入任务",
+      "nodes": {
+        "story_1": "剧情1",
+        "story_2": "剧情2",
+        "story_3": "剧情3",
+        "story_4": "剧情4"
+      }
+    },
+    "clues": [
+      {
+        "text": "海运提单是货物所有权的重要凭证，必须仔细核对所有信息。"
+      },
+      {
+        "text": "电子元器件属于敏感货物，需要特别注意包装和运输要求。"
+      },
+      {
+        "text": "从上海到洛杉矶的海运时间大约为 12-14 天，需要合理安排时间。"
+      }
+    ],
+    "toolbox_items": {
+      "bill_template": "提单模板",
+      "term_dictionary": "术语词典",
+      "classification_manual": "归类手册",
+      "route_map": "航线地图"
+    }
+  },
+  "bill_template": {
+    "title": "海运提单",
+    "title_en": "MARITIME BILL OF LADING",
+    "bl_no_label": "提单编号",
+    "issue_date_label": "签发日期",
+    "bl_no_placeholder": "B/L No.",
+    "issue_date_placeholder": "B/L No.",
+    "carrier_section": "承运人 / CARRIER",
+    "shipper_section": "托运人 / SHIPPER",
+    "carrier_name_placeholder": "承运人名称",
+    "carrier_addr_placeholder": "承运人地址",
+    "shipper_name_placeholder": "托运人名称",
+    "shipper_addr_placeholder": "托运人地址",
+    "consignee_section": "收货人 / CONSIGNEE",
+    "notify_section": "通知方 / NOTIFY PARTY",
+    "consignee_name_placeholder": "收货人名称",
+    "consignee_addr_placeholder": "收货人地址",
+    "notify_name_placeholder": "通知方名称",
+    "notify_addr_placeholder": "通知方地址",
+    "transport_section": "运输信息 / TRANSPORT DETAILS",
+    "vessel_label": "船名 / VESSEL",
+    "vessel_placeholder": "船名",
+    "discharge_port_label": "卸货港 / PORT OF DISCHARGE",
+    "discharge_port_placeholder": "船名",
+    "voyage_label": "航次 / VOYAGE NO.",
+    "voyage_placeholder": "航次",
+    "delivery_place_label": "交货地点 / PLACE OF DELIVERY",
+    "delivery_place_placeholder": "交货地点",
+    "loading_port_label": "装货港 / PORT OF LOADING",
+    "loading_port_placeholder": "装货港",
+    "final_dest_label": "最终目的地 / FINAL DESTINATION",
+    "final_dest_placeholder": "最终目的地",
+    "cargo_section": "货物信息 / CARGO DETAILS",
+    "cargo_marks": "唛头和号码\nMARKS & NUMBERS",
+    "cargo_packages": "件数和包装类型\nNUMBER & KIND OF PACKAGES",
+    "cargo_description": "货物描述\nDESCRIPTION OF GOODS",
+    "cargo_weight": "毛重\nGROSS WEIGHT",
+    "cargo_measurement": "体积\nMEASUREMENT",
+    "cargo_row_placeholder": "唛头",
+    "cargo_marks_placeholder": "请输入唛头和号码",
+    "cargo_packages_placeholder": "请输入件数和包装类型",
+    "cargo_description_placeholder": "请输入货物描述",
+    "cargo_weight_placeholder": "请输入毛重",
+    "cargo_measurement_placeholder": "请输入体积",
+    "add_row": "添加行",
+    "freight_section": "运费和费用 / FREIGHT & CHARGES",
+    "freight_payment_label": "运费支付方式",
+    "currency_label": "货币",
+    "freight_payment_placeholder": "请选择",
+    "payment_prepaid": "预付（Prepaid）",
+    "payment_collect": "到付（Collect）",
+    "upload_hint": "点击或拖拽图片至此处\n上传签字盖章",
+    "upload_remove": "移除图片",
+    "currency_eur": "欧元/EUR",
+    "currency_usd": "美元/USD",
+    "currency_cny": "人民币/CNY",
+    "currency_gbp": "英镑/GBP",
+    "freight_amount_label": "运费金额",
+    "freight_amount_placeholder": "运费金额",
+    "issue_section": "签发地点和日期",
+    "originals_count": "正本份数",
+    "issue_place_label": "地点",
+    "issue_time_label": "时间",
+    "originals_label": "提单",
+    "issue_place_placeholder": "签发地点",
+    "issue_date_picker": "年 / 月 / 日",
+    "originals_count_value": "3",
+    "originals_suffix": "份正本提单",
+    "authorized_signature": "AUTHORIZED SIGNATURE",
+    "carrier_stamp": "承运人签字盖章",
+    "btn_save_draft": "保存草稿",
+    "btn_submit": "提交提单",
+    "btn_export": "导出PDF",
+    "op_tips_title": "操作提示",
+    "op_tips_1": "请确保所有必填项都已填写完整，特别是货物描述和数量信息",
+    "op_tips_2": "运费支付方式选择“预付”或“到付”将影响后续的结算流程",
+    "op_tips_3": "提单一旦提交，将生成正式的运输合同，请仔细核对信息",
+    "op_tips_4": "如有疑问，可以保存草稿后咨询老师或查看相关学习资料"
+  },
+  "project": {
+    "search_placeholder": "搜索项目名称...",
+    "difficulty": "难度",
+    "domain": "领域",
+    "sort": "排序",
+    "difficulty_all": "全部",
+    "difficulty_junior": "初级",
+    "difficulty_middle": "中级",
+    "difficulty_senior": "高级",
+    "domain_all": "全部",
+    "domain_sea": "海运",
+    "domain_air": "空运",
+    "domain_customs": "报关",
+    "domain_comprehensive": "综合",
+    "sort_latest": "最新",
+    "sort_hot": "最热门",
+    "sort_difficulty": "难度",
+    "sort_score": "评分",
+    "enroll_count": "人"
+  },
+  "common": {
+    "pagination_info": "共 {total} 条记录，第 {current}/{totalPages} 页"
+  }
+}

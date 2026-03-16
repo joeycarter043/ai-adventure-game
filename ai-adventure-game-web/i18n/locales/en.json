@@ -1,0 +1,235 @@
+{
+  "welcome": "Welcome to Freight Mystery Game",
+  "home": "Home",
+  "description": "An international freight agency mystery game platform based on Nuxt 4",
+  "header": {
+    "home": "Home",
+    "project_select": "Project",
+    "knowledge": "Learning",
+    "profile": "Profile",
+    "search_placeholder": "Search scripts, knowledge..."
+  },
+  "home_page": {
+    "welcome_back": "Welcome back, Student Zhang",
+    "learning_overview": "Learning Overview",
+    "total_knowledge_points": "Total Knowledge Points",
+    "total_skill_points": "Total Skill Points",
+    "total_scenarios": "Total Scenarios",
+    "skill_level": "Skill Level",
+    "senior_technician": "Senior Technician",
+    "recommended_scenarios": "Recommended Scenarios",
+    "view_all": "View All",
+    "knowledge_learning": "Knowledge Learning",
+    "latest_updates": "Latest Updates",
+    "start": "Start",
+    "minutes": "min",
+    "score": "pts",
+    "knowledge_points": "points",
+    "start_game": "Start Game",
+    "my_studies": "My Studies",
+    "scenarios": {
+      "customs_declaration": "Customs Declaration",
+      "sea_waybill": "Sea Waybill Mystery",
+      "air_urgent": "Air Urgent Mission"
+    },
+    "scenario_descriptions": {
+      "customs_declaration": "Learn about customs declaration processes, handle complex customs procedures, and experience real customs work scenarios.",
+      "sea_waybill": "As a new freight agent, you need to handle a complex sea waybill, solve the mysteries, and ensure smooth cargo clearance.",
+      "air_urgent": "Handle urgent air cargo, coordinate resources, and complete high-difficulty transportation tasks within limited time."
+    },
+    "learning_categories": {
+      "sea_knowledge": "Sea Knowledge",
+      "air_process": "Air Process",
+      "customs_procedures": "Customs Procedures",
+      "warehouse_management": "Warehouse Management"
+    },
+    "updates": [
+      {
+        "title": "New Scenario: Cross-border E-commerce Logistics Challenge",
+        "description": "Experience the latest cross-border e-commerce logistics models and learn related international freight knowledge.",
+        "time": "2 hours ago"
+      },
+      {
+        "title": "System Optimization: Enhanced Learning Experience",
+        "description": "Optimized game loading speed and added more learning hint features.",
+        "time": "1 day ago"
+      },
+      {
+        "title": "Knowledge Question Bank Update",
+        "description": "Added 20 new knowledge points about international trade terms.",
+        "time": "3 days ago"
+      }
+    ]
+  },
+  "scenario_task": {
+    "breadcrumb": {
+      "project_select": "Project",
+      "scenario_select": "Scenario",
+      "current": "Sea Waybill Mystery",
+      "bill_template": "Sea Waybill Template"
+    },
+    "important_tips": "Important Tips",
+    "my_role": "My Role",
+    "script_progress": "Script Progress",
+    "completed_tasks": "Completed {count} task(s)",
+    "remaining_time": "Remaining Time",
+    "elapsed_time": "Elapsed {minutes} min",
+    "minutes_unit": "min",
+    "task_list": "Task List",
+    "clues_obtained": "Clues Obtained",
+    "toolbox": "Toolbox",
+    "roles": {
+      "freight_manager": {
+        "title": "Freight Manager",
+        "desc": "Oversee coordination and decisions"
+      },
+      "operator": {
+        "title": "Operator",
+        "desc": "Handle operation processes"
+      },
+      "customer_service": {
+        "title": "Customer Service",
+        "desc": "Handle customer inquiries"
+      }
+    },
+    "actions": {
+      "continue": "Continue",
+      "exit": "Exit",
+      "back": "Back",
+      "ai_assistant": "AI Assistant",
+      "team_chat": "Team Chat",
+      "use_item": "Use Item"
+    },
+    "stories": {
+      "title": "Story",
+      "current": "Act 1: New Order Received",
+      "task_1": "Task 1: Booking & Transport",
+      "enter_task": "Enter Task",
+      "nodes": {
+        "story_1": "Story 1",
+        "story_2": "Story 2",
+        "story_3": "Story 3",
+        "story_4": "Story 4"
+      }
+    },
+    "clues": [
+      {
+        "text": "A bill of lading is a crucial document of title. All information must be carefully verified."
+      },
+      {
+        "text": "Electronic components are sensitive cargo requiring special attention to packaging and transport."
+      },
+      {
+        "text": "Sea freight from Shanghai to Los Angeles takes approximately 12-14 days. Plan accordingly."
+      }
+    ],
+    "toolbox_items": {
+      "bill_template": "Bill Template",
+      "term_dictionary": "Term Dictionary",
+      "classification_manual": "Classification Manual",
+      "route_map": "Route Map"
+    }
+  },
+  "bill_template": {
+    "title": "海运提单",
+    "title_en": "MARITIME BILL OF LADING",
+    "bl_no_label": "B/L No.",
+    "issue_date_label": "Issue Date",
+    "bl_no_placeholder": "B/L No.",
+    "issue_date_placeholder": "B/L No.",
+    "carrier_section": "承运人 / CARRIER",
+    "shipper_section": "托运人 / SHIPPER",
+    "carrier_name_placeholder": "Carrier Name",
+    "carrier_addr_placeholder": "Carrier Address",
+    "shipper_name_placeholder": "Shipper Name",
+    "shipper_addr_placeholder": "Shipper Address",
+    "consignee_section": "收货人 / CONSIGNEE",
+    "notify_section": "通知方 / NOTIFY PARTY",
+    "consignee_name_placeholder": "Consignee Name",
+    "consignee_addr_placeholder": "Consignee Address",
+    "notify_name_placeholder": "Notify Party Name",
+    "notify_addr_placeholder": "Notify Party Address",
+    "transport_section": "运输信息 / TRANSPORT DETAILS",
+    "vessel_label": "船名 / VESSEL",
+    "vessel_placeholder": "Vessel Name",
+    "discharge_port_label": "卸货港 / PORT OF DISCHARGE",
+    "discharge_port_placeholder": "Vessel Name",
+    "voyage_label": "航次 / VOYAGE NO.",
+    "voyage_placeholder": "Voyage No.",
+    "delivery_place_label": "交货地点 / PLACE OF DELIVERY",
+    "delivery_place_placeholder": "Place of Delivery",
+    "loading_port_label": "装货港 / PORT OF LOADING",
+    "loading_port_placeholder": "Port of Loading",
+    "final_dest_label": "最终目的地 / FINAL DESTINATION",
+    "final_dest_placeholder": "Final Destination",
+    "cargo_section": "货物信息 / CARGO DETAILS",
+    "cargo_marks": "唛头和号码\nMARKS & NUMBERS",
+    "cargo_packages": "件数和包装类型\nNUMBER & KIND OF PACKAGES",
+    "cargo_description": "货物描述\nDESCRIPTION OF GOODS",
+    "cargo_weight": "毛重\nGROSS WEIGHT",
+    "cargo_measurement": "体积\nMEASUREMENT",
+    "cargo_row_placeholder": "—",
+    "cargo_marks_placeholder": "Marks & Numbers",
+    "cargo_packages_placeholder": "No. & Kind of Packages",
+    "cargo_description_placeholder": "Description of Goods",
+    "cargo_weight_placeholder": "Gross Weight",
+    "cargo_measurement_placeholder": "Measurement",
+    "add_row": "Add Row",
+    "freight_section": "运费和费用 / FREIGHT & CHARGES",
+    "freight_payment_label": "Payment Method",
+    "currency_label": "Currency",
+    "freight_payment_placeholder": "Please select",
+    "payment_prepaid": "Prepaid",
+    "payment_collect": "Collect",
+    "upload_hint": "Click or drag image here\nto upload signature & stamp",
+    "upload_remove": "Remove image",
+    "currency_eur": "EUR",
+    "currency_usd": "USD",
+    "currency_cny": "CNY",
+    "currency_gbp": "GBP",
+    "freight_amount_label": "Freight Amount",
+    "freight_amount_placeholder": "Freight Amount",
+    "issue_section": "Place & Date of Issue",
+    "originals_count": "Number of Originals",
+    "issue_place_label": "Place",
+    "issue_time_label": "Date",
+    "originals_label": "B/L",
+    "issue_place_placeholder": "Place of Issue",
+    "issue_date_picker": "YYYY / MM / DD",
+    "originals_count_value": "3",
+    "originals_suffix": "Original B/L(s)",
+    "authorized_signature": "AUTHORIZED SIGNATURE",
+    "carrier_stamp": "Carrier Signature & Stamp",
+    "btn_save_draft": "Save Draft",
+    "btn_submit": "Submit B/L",
+    "btn_export": "Export PDF",
+    "op_tips_title": "Operation Tips",
+    "op_tips_1": "Ensure all required fields are filled in, especially cargo description and quantity",
+    "op_tips_2": "Selecting Prepaid or Collect for freight payment will affect subsequent settlement processes",
+    "op_tips_3": "Once submitted, a formal transport contract will be generated. Please verify all information carefully",
+    "op_tips_4": "If in doubt, save as draft and consult your instructor or review relevant study materials"
+  },
+  "project": {
+    "search_placeholder": "Search projects...",
+    "difficulty": "Difficulty",
+    "domain": "Domain",
+    "sort": "Sort",
+    "difficulty_all": "All",
+    "difficulty_junior": "Junior",
+    "difficulty_middle": "Middle",
+    "difficulty_senior": "Senior",
+    "domain_all": "All",
+    "domain_sea": "Sea Freight",
+    "domain_air": "Air Freight",
+    "domain_customs": "Customs",
+    "domain_comprehensive": "Comprehensive",
+    "sort_latest": "Latest",
+    "sort_hot": "Popular",
+    "sort_difficulty": "Difficulty",
+    "sort_score": "Rating",
+    "enroll_count": "enrolled"
+  },
+  "common": {
+    "pagination_info": "Total {total} records, page {current}/{totalPages}"
+  }
+}
