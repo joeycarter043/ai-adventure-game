@@ -11,8 +11,8 @@
     </div>
 
     <div class="field-row mt-8">
-      <input v-model="form.vessel" class="input-field" :placeholder="$t('bill_template.vessel_placeholder')" />
-      <input v-model="form.dischargePort" class="input-field" :placeholder="$t('bill_template.discharge_port_placeholder')" />
+      <BaseInput v-model="form.vessel" :placeholder="$t('bill_template.vessel_placeholder')" />
+      <BaseInput v-model="form.dischargePort" :placeholder="$t('bill_template.discharge_port_placeholder')" />
     </div>
 
     <div class="field-row label-row mt-20">
@@ -20,8 +20,8 @@
       <span class="sub-label">{{ $t('bill_template.delivery_place_label') }}</span>
     </div>
     <div class="field-row mt-8">
-      <input v-model="form.voyage" class="input-field" :placeholder="$t('bill_template.voyage_placeholder')" />
-      <input v-model="form.deliveryPlace" class="input-field" :placeholder="$t('bill_template.delivery_place_placeholder')" />
+      <BaseInput v-model="form.voyage" :placeholder="$t('bill_template.voyage_placeholder')" />
+      <BaseInput v-model="form.deliveryPlace" :placeholder="$t('bill_template.delivery_place_placeholder')" />
     </div>
 
     <div class="field-row label-row mt-20">
@@ -29,8 +29,8 @@
       <span class="sub-label">{{ $t('bill_template.final_dest_label') }}</span>
     </div>
     <div class="field-row mt-8">
-      <input v-model="form.loadingPort" class="input-field" :placeholder="$t('bill_template.loading_port_placeholder')" />
-      <input v-model="form.finalDest" class="input-field" :placeholder="$t('bill_template.final_dest_placeholder')" />
+      <BaseInput v-model="form.loadingPort" :placeholder="$t('bill_template.loading_port_placeholder')" />
+      <BaseInput v-model="form.finalDest" :placeholder="$t('bill_template.final_dest_placeholder')" />
     </div>
 
     <div class="divider mt-16" />
@@ -100,18 +100,4 @@ const form = reactive({
 .mt-8  { margin-top: 8px; }
 .mt-20 { margin-top: 20px; }
 
-.input-field {
-  height: 48px;
-  border-radius: 8px;
-  border: 1px solid rgba(0, 0, 0, 1);
-  background: linear-gradient(rgba(40, 72, 122, 0.22), rgba(22, 50, 84, 0.22));
-  color: #fff;
-  font-size: 14px;
-  padding: 0 13px;
-  outline: none;
-  transition: border-color 0.15s;
-
-  &::placeholder { color: #999; }
-  &:focus { border-color: rgba(0, 174, 255, 0.5); }
-}
 </style>

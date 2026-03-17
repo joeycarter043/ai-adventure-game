@@ -174,7 +174,7 @@
     "cargo_description_placeholder": "Description of Goods",
     "cargo_weight_placeholder": "Gross Weight",
     "cargo_measurement_placeholder": "Measurement",
-    "add_row": "Add Row",
+    "action_label": "操作 / Actions",
     "freight_section": "运费和费用 / FREIGHT & CHARGES",
     "freight_payment_label": "Payment Method",
     "currency_label": "Currency",
@@ -230,6 +230,10 @@
     "enroll_count": "enrolled"
   },
   "common": {
-    "pagination_info": "Total {total} records, page {current}/{totalPages}"
+    "pagination_info": "Total {total} records, page {current}/{totalPages}",
+    "action": "Actions",
+    "delete": "Delete",
+    "add_row": "Add Row",
+    "delete_row": "Delete Row"
   }
 }

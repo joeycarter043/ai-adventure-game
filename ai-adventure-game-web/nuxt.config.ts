@@ -28,6 +28,9 @@ export default defineNuxtConfig({
   css: ['@/assets/scss/main.scss'],
   // 配置组件自动导入路径
   components: [ 
+    // 专门为 base 目录配置，并强制加上 Base 前缀
+    { path: '~/components/base', prefix: 'Base' },
+    // 其他通用组件
     { path: '~/components', pathPrefix: false }
   ],
 

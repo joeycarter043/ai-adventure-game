@@ -174,7 +174,7 @@
     "cargo_description_placeholder": "请输入货物描述",
     "cargo_weight_placeholder": "请输入毛重",
     "cargo_measurement_placeholder": "请输入体积",
-    "add_row": "添加行",
+    "action_label": "操作 / Actions",
     "freight_section": "运费和费用 / FREIGHT & CHARGES",
     "freight_payment_label": "运费支付方式",
     "currency_label": "货币",
@@ -230,6 +230,10 @@
     "enroll_count": "人"
   },
   "common": {
-    "pagination_info": "共 {total} 条记录，第 {current}/{totalPages} 页"
+    "pagination_info": "共 {total} 条记录，第 {current}/{totalPages} 页",
+    "action": "操作",
+    "delete": "删除",
+    "add_row": "添加行",
+    "delete_row": "删除行"
   }
 }

@@ -7,15 +7,15 @@
       <span class="field-label">{{ $t('bill_template.bl_no_label') }}</span>
       <span class="field-label">{{ $t('bill_template.issue_date_label') }}</span>
     </div>
+
     <div class="field-row two-col">
-      <input
+      <BaseInput
         v-model="form.blNo"
-        class="input-field"
         :placeholder="$t('bill_template.bl_no_placeholder')"
       />
-      <input
+      
+      <BaseDatePicker
         v-model="form.issueDate"
-        class="input-field"
         :placeholder="$t('bill_template.issue_date_placeholder')"
       />
     </div>
@@ -72,26 +72,9 @@ const form = reactive({
   margin-bottom: 10px;
 }
 
-.input-field {
-  flex: 1;
-  height: 48px;
-  border-radius: 8px;
-  border: 1px solid rgba(0, 0, 0, 1);
-  background: linear-gradient(rgba(40, 72, 122, 0.22), rgba(22, 50, 84, 0.22));
-  color: #fff;
-  font-size: 14px;
-  padding: 0 13px;
-  outline: none;
-  transition: border-color 0.15s;
-
-  &::placeholder {
-    color: #999;
-  }
-
-  &:focus {
-    border-color: rgba(0, 174, 255, 0.5);
-  }
-}
+/* 原本的 .input-field 样式已全部移动到 BaseInput 和 BaseDatePicker 组件内部
+   这里只需要保留布局相关的 CSS 即可
+*/
 
 .divider {
   height: 2px;

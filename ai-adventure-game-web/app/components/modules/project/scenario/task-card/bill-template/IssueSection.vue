@@ -12,29 +12,17 @@
       <div class="left-group">
         <div class="field-col">
           <span class="sub-label">{{ $t('bill_template.issue_place_label') }}</span>
-          <input
-            v-model="form.issuePlace"
-            class="input-field"
-            :placeholder="$t('bill_template.issue_place_placeholder')"
+          <BaseInput 
+            v-model="form.issuePlace" 
+            :placeholder="$t('bill_template.issue_place_placeholder')" 
           />
         </div>
         <div class="field-col">
           <span class="sub-label">{{ $t('bill_template.issue_time_label') }}</span>
-          <div class="date-wrapper">
-            <input
-              v-model="form.issueDate"
-              class="input-field date-input"
-              type="date"
-            />
-            <svg class="calendar-icon" width="16" height="16" viewBox="0 0 16 16" fill="none" aria-hidden="true">
-              <rect x="1" y="2.5" width="14" height="12.5" rx="2" stroke="#aaa" stroke-width="1.2"/>
-              <path d="M1 6.5h14" stroke="#aaa" stroke-width="1.2"/>
-              <path d="M5 1v3M11 1v3" stroke="#aaa" stroke-width="1.2" stroke-linecap="round"/>
-              <circle cx="5" cy="10" r="0.8" fill="#aaa"/>
-              <circle cx="8" cy="10" r="0.8" fill="#aaa"/>
-              <circle cx="11" cy="10" r="0.8" fill="#aaa"/>
-            </svg>
-          </div>
+          <BaseDatePicker 
+            v-model="form.issueDate" 
+            :placeholder="$t('bill_template.issue_date_picker')" 
+          />
         </div>
       </div>
 
@@ -42,12 +30,12 @@
       <div class="right-group">
         <span class="sub-label">{{ $t('bill_template.originals_label') }}</span>
         <div class="originals-group">
-          <input
-            v-model="form.originalsCount"
-            class="input-field originals-input"
-            type="number"
-            min="1"
-            max="9"
+          <BaseInput 
+            v-model="form.originalsCount" 
+            type="number" 
+            min="1" 
+            max="9" 
+            class="originals-input-box"
           />
           <span class="originals-suffix">{{ $t('bill_template.originals_suffix') }}</span>
         </div>
@@ -200,47 +188,6 @@ function clearImage() {
   color: #b5b5b5;
   line-height: 24px;
   margin-bottom: 10px;
-}
-
-/* ─── Input 通用 ──────────────────────────────────── */
-.input-field {
-  height: 48px;
-  border-radius: 8px;
-  border: 1px solid rgba(0, 0, 0, 1);
-  background: linear-gradient(rgba(40, 72, 122, 0.22), rgba(22, 50, 84, 0.22));
-  color: #fff;
-  font-size: 14px;
-  padding: 0 13px;
-  outline: none;
-  transition: border-color 0.15s;
-
-  &::placeholder { color: #999; }
-  &:focus { border-color: rgba(0, 174, 255, 0.5); }
-  &[type="date"] {
-    color-scheme: dark;
-    cursor: pointer;
-    padding-right: 38px;
-  }
-  &::-webkit-outer-spin-button,
-  &::-webkit-inner-spin-button { -webkit-appearance: none; }
-  &[type=number] { -moz-appearance: textfield; }
-}
-
-/* date wrapper：日历图标叠在右侧 */
-.date-wrapper {
-  position: relative;
-  display: flex;
-  align-items: center;
-}
-
-.date-input {
-  width: 100%;
-}
-
-.calendar-icon {
-  position: absolute;
-  right: 12px;
-  pointer-events: none;
 }
 
 /* 正本份数：短输入框 + 后缀文字 */

@@ -39,8 +39,8 @@ import OperationTips from '@/components/modules/project/scenario/task-card/bill-
 
 const { t } = useI18n()
 
-const breadcrumbTitle = ref(t('scenario_task.breadcrumb.bill_template'))
-provide('dynamicBreadcrumbTitle', breadcrumbTitle)
+const taskTitle = ref(t('scenario_task.breadcrumb.current'))
+provide('dynamicBreadcrumbTitle', taskTitle)
 
 function onSaveDraft() {
   console.log('save draft')
