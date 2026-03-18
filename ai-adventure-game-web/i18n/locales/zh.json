@@ -66,7 +66,8 @@
       "project_select": "项目选择",
       "scenario_select": "剧本选择",
       "current": "海运提单之谜",
-      "bill_template": "海运运单模板填制"
+      "bill_template": "海运运单模板填制",
+      "trade_terms_guide": "贸易术语指南"
     },
     "important_tips": "重要提示",
     "my_role": "我的角色",
@@ -235,5 +236,150 @@
     "delete": "删除",
     "add_row": "添加行",
     "delete_row": "删除行"
+  },
+  "trade_terms": {
+    "page_title": "贸易术语指南",
+    "overview": {
+      "title": "贸易术语概述",
+      "description": "贸易术语（Trade Terms）是在国际贸易中用来明确买卖双方责任、费用和风险划分的专业术语。 本指南包含了最新的国际贸易术语解释通则（Incoterms® 2020）中的所有术语，帮助您更好地理解和应用于实际业务中。"
+    },
+    "classification_title": "术语分类",
+    "classification_table_title": "术语分类",
+    "tabs": {
+      "all": "全部术语",
+      "maritime": "海运术语",
+      "land": "陆运术语",
+      "multimodal": "多式联运术语"
+    },
+    "transport": {
+      "any": "适用于任何运输方式",
+      "sea": "仅适用于海运或内河运输"
+    },
+    "terms": {
+      "EXW": {
+        "name": "工厂交货（Ex Works）"
+      },
+      "FCA": {
+        "name": "货交承运人（Free Carrier）"
+      },
+      "FOB": {
+        "name": "船上交货（Free On Board）"
+      },
+      "CFR": {
+        "name": "成本加运费（Cost and Freight）"
+      },
+      "CIF": {
+        "name": "成本、保险费加运费（Cost, Insurance and Freight）"
+      },
+      "CPT": {
+        "name": "运费付至（Carriage Paid To）"
+      },
+      "CIP": {
+        "name": "运费和保险费付至（Carriage and Insurance Paid To）"
+      },
+      "DAP": {
+        "name": "目的地交货（Delivered At Place）"
+      },
+      "DPU": {
+        "name": "目的地卸货后交货（Delivered at Place Unloaded）"
+      },
+      "DDP": {
+        "name": "完税后交货（Delivered Duty Paid）"
+      }
+    },
+    "detail": {
+      "definition": "定义",
+      "seller_responsibility": "卖方责任",
+      "buyer_responsibility": "买方责任",
+      "notes": "注意事项"
+    },
+    "table": {
+      "transport": "运输方式",
+      "term": "术语",
+      "risk_point": "风险转移点",
+      "export_clearance": "出口清关",
+      "import_clearance": "进口清关",
+      "freight_payment": "运费支付",
+      "insurance": "保险责任"
+    },
+    "risk_points": {
+      "卖方工厂": "卖方工厂",
+      "交给承运人": "交给承运人",
+      "货物装上船": "货物装上船",
+      "目的地": "目的地",
+      "目的地卸货后": "目的地卸货后"
+    },
+    "clearance": {
+      "买方": "买方",
+      "卖方": "卖方"
+    },
+    "freight": {
+      "买方": "买方",
+      "卖方": "卖方"
+    },
+    "insurance": {
+      "无": "无",
+      "最低险别": "最低险别"
+    }
+  },
+  "classification_manual": {
+    "page_title": "商品归类查询手册",
+    "product_query": {
+      "title": "商品编码查询",
+      "search_placeholder": "请输入商品名称或关键词进行搜索",
+      "product_name": "智能手机",
+      "product_name_hint": "用于查询的商品名称",
+      "product_code": "10位商品编码：8517.1300.00",
+      "description_title": "商品描述",
+      "description_content": "具有通话、短信、上网功能的便携式电子设备，配备触摸屏，内置操作系统。",
+      "classification_basis": "归类依据",
+      "classification_basis_content": "根据《中华人民共和国进出口税则》第八十五章，品目8517，子目录1300，本国子目00。",
+      "notes_title": "注意事项",
+      "notes_content": "需确认设备是否包含特殊功能，如卫星电话功能可能影响最终归类。",
+      "all_categories": "全部商品"
+    },
+    "categories": {
+      "electronics": "电子产品",
+      "clothing": "服装鞋帽",
+      "food": "食品饮料",
+      "machinery": "机械设备",
+      "chemicals": "化工产品"
+    },
+    "tariff_rates": {
+      "title": "各国税率及优惠政策",
+      "korea": {
+        "name": "韩国"
+      },
+      "eu": {
+        "name": "欧盟"
+      },
+      "usa": {
+        "name": "美国"
+      },
+      "import_duty": "进口关税",
+      "vat": "增值税",
+      "consumption_tax": "消费税",
+      "mfn": "最惠国",
+      "no_preferential": "优惠政策: 无特殊优惠",
+      "preferential_policy": "优惠政策: 符合原产地规则可享受关税减免",
+      "view_more": "查看更多国家"
+    },
+    "inspection": {
+      "title": "检验检疫要求",
+      "import_inspection": "进口检验检疫",
+      "documents_list": "所需证件清单",
+      "ccc_certification": "强制性产品认证(CCC)",
+      "ccc_description": "所有进口智能手机需获得CCC认证",
+      "import_inspection_cert": "进口商品检验证明",
+      "import_inspection_desc": "需提供商检部门出具的检验证明",
+      "plant_quarantine": "动植物检疫",
+      "plant_quarantine_desc": "无需动植物检疫",
+      "ccc_certificate": "CCC认证证书",
+      "certificate_origin": "原产地证书",
+      "commercial_invoice": "商业发票",
+      "packing_list": "装箱单",
+      "required": "必需",
+      "import_license": "进口许可证"
+    }
   }
 }

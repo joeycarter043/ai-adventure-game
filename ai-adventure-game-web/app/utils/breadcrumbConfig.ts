@@ -12,6 +12,6 @@ export const BREADCRUMB_MAP: Record<string, string> = {
   '/project/scenario/task-card': 'DYNAMIC_TITLE', 
   // 详情级：即使别的模块也有 detail，这里的全路径是唯一的
   '/project/scenario/task-card/detail': 'scenario_task.stories.title',
-  // 详情级：即使别的模块也有 detail，这里的全路径是唯一的
   '/project/scenario/task-card/bill-template': 'scenario_task.breadcrumb.bill_template',
+  '/project/scenario/task-card/trade-terms-guide': 'scenario_task.breadcrumb.trade_terms_guide',
 }

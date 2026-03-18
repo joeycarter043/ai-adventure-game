@@ -66,7 +66,8 @@
       "project_select": "Project",
       "scenario_select": "Scenario",
       "current": "Sea Waybill Mystery",
-      "bill_template": "Sea Waybill Template"
+      "bill_template": "Sea Waybill Template",
+      "trade_terms_guide": "Trade Terms Guide"
     },
     "important_tips": "Important Tips",
     "my_role": "My Role",
@@ -235,5 +236,150 @@
     "delete": "Delete",
     "add_row": "Add Row",
     "delete_row": "Delete Row"
+  },
+  "trade_terms": {
+    "page_title": "Trade Terms Guide",
+    "overview": {
+      "title": "Trade Terms Overview",
+      "description": "Trade Terms are specialized terms used in international trade to clarify the responsibilities, costs, and risk allocation between buyers and sellers. This guide includes all terms from the latest Incoterms® 2020, helping you better understand and apply them in actual business."
+    },
+    "classification_title": "Term Classification",
+    "classification_table_title": "Term Classification",
+    "tabs": {
+      "all": "All Terms",
+      "maritime": "Maritime Terms",
+      "land": "Land Terms",
+      "multimodal": "Multimodal Terms"
+    },
+    "transport": {
+      "any": "Applicable to any mode of transport",
+      "sea": "Only applicable to sea or inland waterway transport"
+    },
+    "terms": {
+      "EXW": {
+        "name": "Ex Works"
+      },
+      "FCA": {
+        "name": "Free Carrier"
+      },
+      "FOB": {
+        "name": "Free On Board"
+      },
+      "CFR": {
+        "name": "Cost and Freight"
+      },
+      "CIF": {
+        "name": "Cost, Insurance and Freight"
+      },
+      "CPT": {
+        "name": "Carriage Paid To"
+      },
+      "CIP": {
+        "name": "Carriage and Insurance Paid To"
+      },
+      "DAP": {
+        "name": "Delivered At Place"
+      },
+      "DPU": {
+        "name": "Delivered at Place Unloaded"
+      },
+      "DDP": {
+        "name": "Delivered Duty Paid"
+      }
+    },
+    "detail": {
+      "definition": "Definition",
+      "seller_responsibility": "Seller's Responsibility",
+      "buyer_responsibility": "Buyer's Responsibility",
+      "notes": "Notes"
+    },
+    "table": {
+      "transport": "Transport",
+      "term": "Term",
+      "risk_point": "Risk Transfer Point",
+      "export_clearance": "Export Clearance",
+      "import_clearance": "Import Clearance",
+      "freight_payment": "Freight Payment",
+      "insurance": "Insurance"
+    },
+    "risk_points": {
+      "卖方工厂": "Seller's Premises",
+      "交给承运人": "Carrier's Custody",
+      "货物装上船": "On Board the Vessel",
+      "目的地": "Destination",
+      "目的地卸货后": "At Destination Unloaded"
+    },
+    "clearance": {
+      "买方": "Buyer",
+      "卖方": "Seller"
+    },
+    "freight": {
+      "买方": "Buyer",
+      "卖方": "Seller"
+    },
+    "insurance": {
+      "无": "None",
+      "最低险别": "Minimum Coverage"
+    }
+  },
+  "classification_manual": {
+    "page_title": "Product Classification Manual",
+    "product_query": {
+      "title": "Product Code Query",
+      "search_placeholder": "Please enter product name or keywords to search",
+      "product_name": "Smartphone",
+      "product_name_hint": "Product name for query",
+      "product_code": "10-digit Product Code: 8517.1300.00",
+      "description_title": "Product Description",
+      "description_content": "Portable electronic devices with call, SMS, and internet functions, equipped with touchscreen and built-in operating system.",
+      "classification_basis": "Classification Basis",
+      "classification_basis_content": "According to Chapter 85 of China's Import and Export Tariff, heading 8517, subheading 1300, national subheading 00.",
+      "notes_title": "Notes",
+      "notes_content": "Confirm whether the device includes special functions, as satellite phone functionality may affect final classification.",
+      "all_categories": "All Categories"
+    },
+    "categories": {
+      "electronics": "Electronics",
+      "clothing": "Clothing & Footwear",
+      "food": "Food & Beverages",
+      "machinery": "Machinery",
+      "chemicals": "Chemical Products"
+    },
+    "tariff_rates": {
+      "title": "Tariff Rates and Preferential Policies",
+      "korea": {
+        "name": "South Korea"
+      },
+      "eu": {
+        "name": "EU"
+      },
+      "usa": {
+        "name": "USA"
+      },
+      "import_duty": "Import Duty",
+      "vat": "VAT",
+      "consumption_tax": "Consumption Tax",
+      "mfn": "MFN",
+      "no_preferential": "Preferential Policy: No special preferences",
+      "preferential_policy": "Preferential Policy: Tariff reduction available if rules of origin are met",
+      "view_more": "View More Countries"
+    },
+    "inspection": {
+      "title": "Inspection and Quarantine Requirements",
+      "import_inspection": "Import Inspection & Quarantine",
+      "documents_list": "Required Documents List",
+      "ccc_certification": "Compulsory Product Certification (CCC)",
+      "ccc_description": "All imported smartphones must obtain CCC certification",
+      "import_inspection_cert": "Import Commodity Inspection Certificate",
+      "import_inspection_desc": "Must provide inspection certificate issued by commodity inspection department",
+      "plant_quarantine": "Plant & Animal Quarantine",
+      "plant_quarantine_desc": "No plant or animal quarantine required",
+      "ccc_certificate": "CCC Certification Certificate",
+      "certificate_origin": "Certificate of Origin",
+      "commercial_invoice": "Commercial Invoice",
+      "packing_list": "Packing List",
+      "required": "Required",
+      "import_license": "Import License"
+    }
   }
 }

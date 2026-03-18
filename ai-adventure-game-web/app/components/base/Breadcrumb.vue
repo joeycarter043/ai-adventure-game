@@ -13,12 +13,20 @@
 </template>
 
 <script setup lang="ts">
-const { t } = useI18n()
+const { t, locale } = useI18n()
 const route = useRoute()
 const localePath = useLocalePath()
 
-// 关键：接收页面注入的动态标题
-const dynamicBreadcrumbTitle = inject<Ref<string | null>>('dynamicBreadcrumbTitle', ref(null))
+// 关键：接收页面注入的动态标题 - 使用 toRef 保持响应式
+const injectedTitle = inject<Ref<string | null>>('dynamicBreadcrumbTitle', ref(null))
+
+// 创建一个响应式的 ref 来追踪标题变化
+const dynamicBreadcrumbTitle = ref<string | null>(null)
+
+// 监听注入的标题和语言变化
+watchEffect(() => {
+  dynamicBreadcrumbTitle.value = injectedTitle?.value ?? null
+})
 
 const breadcrumbs = computed(() => {
   const pathArray = route.path.split('/').filter(p => p && p !== 'en' && p !== 'zh')
@@ -31,8 +39,8 @@ const breadcrumbs = computed(() => {
     const translationKey = BREADCRUMB_MAP[currentFullPath]
     
     let label = ''
-    // ... 之后的逻辑：如果是 task-card 级且有 inject 就用注入，否则用 translationKey
-    if (path === 'task-card' && dynamicBreadcrumbTitle?.value) {
+    // 优先使用注入的动态标题（如果是 task-card 级别）
+    if (path === 'task-card' && dynamicBreadcrumbTitle.value) {
       label = dynamicBreadcrumbTitle.value
     } else if (translationKey) {
       label = t(translationKey)
