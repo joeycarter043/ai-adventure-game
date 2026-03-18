@@ -1,31 +1,32 @@
 <template>
   <section class="tariff-rates-section">
-    <!-- 标题 -->
-    <div class="section-title-wrapper">
-      <h2 class="section-title">{{ $t('classification_manual.tariff_rates.title') }}</h2>
-    </div>
+    <div class="section-container">
+      <div class="section-title-wrapper">
+        <h2 class="section-title">{{ $t('classification_manual.tariff_rates.title') }}</h2>
+      </div>
 
-    <!-- 税率卡片区域 -->
-    <div class="rates-cards">
-      <TariffRateCard
-        v-for="(country, index) in visibleCountries"
-        :key="country.code || index"
-        :country-name="country.name"
-        :country-code="country.code"
-        :import-duty="country.importDuty"
-        :vat="country.vat"
-        :consumption-tax="country.consumptionTax"
-        :has-preferential="country.hasPreferential"
-        :preferential-tag="country.preferentialTag"
-      />
-    </div>
+      <div class="rates-grid">
+        <TariffRateCard
+          v-for="(country, index) in visibleCountries"
+          :key="country.code || index"
+          :country-name="country.name"
+          :country-code="country.code"
+          :import-duty="country.importDuty"
+          :vat="country.vat"
+          :consumption-tax="country.consumptionTax"
+          :has-preferential="country.hasPreferential"
+          :preferential-tag="country.preferentialTag"
+        />
+      </div>
 
-    <!-- 查看更多国家按钮 -->
-    <div v-if="hasMore" class="view-more" @click="loadMore">
-      <span class="view-more-text">{{ $t('classification_manual.tariff_rates.view_more') }}</span>
-      <svg width="19" height="10" viewBox="0 0 19 10" fill="none" class="view-more-icon">
-        <path d="M1 1L9.5 9L18 1" stroke="white" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
-      </svg>
+      <div class="view-more-container">
+        <div v-if="hasMore" class="view-more-btn" @click="loadMore">
+          <span class="view-more-text">{{ $t('classification_manual.tariff_rates.view_more') }}</span>
+          <svg width="19" height="10" viewBox="0 0 19 10" fill="none" class="view-more-icon">
+            <path d="M1 1L9.5 9L18 1" stroke="white" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+          </svg>
+        </div>
+      </div>
     </div>
   </section>
 </template>
@@ -128,77 +129,75 @@ const loadMore = () => {
 <style scoped lang="scss">
 .tariff-rates-section {
   width: 100%;
-  min-height: 438px;
-  margin-top: 33px;
-  position: relative;
-  padding: 32px 0 51px 0;
-  box-sizing: border-box;
+  margin-top: 40px;
 }
 
-.section-title-wrapper {
-  display: flex;
-  align-items: center;
+.section-container {
+  /* 还原设计稿外边框 */
+  background: rgba(40, 72, 122, 0.2);
+  border-radius: 8px;
+  border: 1px solid rgba(255, 255, 255, 0.15);
+  padding: 32px 3.5% 45px 3.5%;
+  position: relative;
 }
 
 .section-title {
   font-size: 30px;
   font-weight: 700;
   color: #fff;
-  line-height: 24px;
-  margin: 0 0 0 3.5%;
+  margin: 0 0 32px 0;
 }
 
-.rates-cards {
+.rates-grid {
   display: grid;
-  grid-template-columns: repeat(3, 1fr);
-  gap: 32px;
-  width: 93%;
-  margin: 26px 0 0 3.5%;
+  /* 响应式：默认4列，1600px以下3列 */
+  grid-template-columns: repeat(4, 1fr);
+  gap: 24px;
+  width: 100%;
 
   @media (max-width: 1600px) {
-    grid-template-columns: repeat(2, 1fr);
+    grid-template-columns: repeat(3, 1fr);
   }
 
   @media (max-width: 1200px) {
+    grid-template-columns: repeat(2, 1fr);
+  }
+
+  @media (max-width: 768px) {
     grid-template-columns: 1fr;
   }
 }
 
-.view-more {
+.view-more-container {
+  display: flex;
+  justify-content: center; /* 按钮水平居中 */
+  margin-top: 40px;
+  width: 100%;
+}
+
+.view-more-btn {
   display: flex;
   align-items: center;
-  gap: 33px;
+  justify-content: center;
+  gap: 20px;
   cursor: pointer;
-  margin: 26px 0 0 3.5%;
-  padding: 12px 20px;
-  border-radius: 8px;
-  background: linear-gradient(
-    rgba(40, 72, 122, 0.4) 0%,
-    rgba(40, 72, 122, 0.4) 0%,
-    rgba(22, 50, 84, 0.4) 100%,
-    rgba(22, 50, 84, 0.4) 100%
-  );
-  border: 1px solid rgba(255, 255, 255, 0.15);
+  padding: 10px 40px;
+  border-radius: 4px;
+  background: transparent;
   transition: all 0.3s ease;
-  width: fit-content;
-
+  
   &:hover {
-    border-color: rgba(0, 255, 252, 0.5);
+    .view-more-text { color: rgba(0, 255, 252, 1); }
+    .view-more-icon path { stroke: rgba(0, 255, 252, 1); }
   }
 }
 
 .view-more-text {
   font-size: 18px;
-  font-weight: 500;
   color: #fff;
-  line-height: 28px;
-  white-space: nowrap;
 }
 
 .view-more-icon {
-  width: 19px;
-  height: 10px;
-  flex-shrink: 0;
-  margin-top: 4px;
+  transition: transform 0.3s ease;
 }
 </style>

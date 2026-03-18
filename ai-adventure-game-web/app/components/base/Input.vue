@@ -21,11 +21,13 @@ interface Props {
   placeholder?: string
   min?: number | string
   max?: number | string
+  height?: string
 }
 
 const props = withDefaults(defineProps<Props>(), {
   type: 'text',
-  placeholder: ''
+  placeholder: '',
+  height: '48px'
 })
 
 const emit = defineEmits(['update:modelValue'])
@@ -42,7 +44,7 @@ const onInput = (e: Event) => {
 
 <style scoped lang="scss">
 .base-input-wrapper {
-  height: 48px;
+  height: v-bind(height);
   border-radius: 8px;
   border: 1px solid rgba(0, 0, 0, 1);
   background: linear-gradient(rgba(40, 72, 122, 0.22), rgba(22, 50, 84, 0.22));

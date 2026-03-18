@@ -83,6 +83,7 @@ interface Props {
   labelKey?: string
   // 值字段（当选项为对象时）
   valueKey?: string
+  height?: string
 }
 
 const props = withDefaults(defineProps<Props>(), {
@@ -92,7 +93,8 @@ const props = withDefaults(defineProps<Props>(), {
   multiple: false,
   placeholder: '请选择',
   labelKey: 'label',
-  valueKey: 'value'
+  valueKey: 'value',
+  height: '48px'
 })
 
 const emit = defineEmits<{
@@ -202,7 +204,7 @@ onUnmounted(() => {
   border-radius: 8px;
   border: 1px solid rgba(255, 255, 255, 0.15);
   padding: 0 16px;
-  height: 54px;
+  height: v-bind(height);
   cursor: pointer;
   transition: all 0.3s ease;
 

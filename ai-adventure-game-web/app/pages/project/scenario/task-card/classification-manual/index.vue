@@ -21,8 +21,8 @@ import TaskCardSubHeader from '@/components/modules/project/scenario/task-card/T
 
 const { t } = useI18n()
 
-// 动态面包屑标题
-const taskTitle = computed(() => t('classification_manual.page_title'))
+// 动态面包屑标题 - 使用 computed 确保响应式更新
+const taskTitle = ref(t('scenario_task.breadcrumb.current'))
 provide('dynamicBreadcrumbTitle', taskTitle)
 </script>
 

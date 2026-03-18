@@ -83,102 +83,95 @@ const flagStyle = computed(() => {
 
 <style scoped lang="scss">
 .tariff-rate-card {
+  /* 科技感背景渐变 */
   background: linear-gradient(
-    rgba(40, 72, 122, 0.4) 0%,
-    rgba(40, 72, 122, 0.4) 0%,
-    rgba(22, 50, 84, 0.4) 100%,
+    180deg, 
+    rgba(40, 72, 122, 0.4) 0%, 
     rgba(22, 50, 84, 0.4) 100%
   );
-  border-radius: 30px;
+  border-radius: 20px; /* 稍微减小圆角，更符合一般设计规范，若需还原30px可改回 */
   border: 1px solid rgba(255, 255, 255, 0.15);
-  width: 100%;
-  min-height: 256px;
-  padding: 19px 24px;
-  box-sizing: border-box;
+  padding: 24px;
   display: flex;
   flex-direction: column;
+  transition: transform 0.2s ease;
+
+  &:hover {
+    border-color: rgba(0, 255, 252, 0.4);
+    background: linear-gradient(
+      180deg, 
+      rgba(40, 72, 122, 0.6) 0%, 
+      rgba(22, 50, 84, 0.6) 100%
+    );
+  }
 }
 
 .card-header {
   display: flex;
   align-items: center;
   justify-content: space-between;
-  width: 100%;
-  min-height: 38px;
-  flex-wrap: wrap;
-  gap: 12px;
+  margin-bottom: 24px;
 }
 
 .country-info {
   display: flex;
   align-items: center;
-  gap: 17px;
+  gap: 15px;
 }
 
 .country-flag {
-  width: 60px;
-  height: 38px;
+  width: 48px; /* 调整尺寸 */
+  height: 32px;
   border-radius: 4px;
-  flex-shrink: 0;
+  object-fit: cover;
+  background-size: cover !important;
+  background-position: center !important;
 }
 
 .country-name {
-  font-size: 24px;
-  font-weight: 500;
-  color: rgba(212, 212, 212, 1);
-  line-height: 24px;
-}
-
-.preferential-tag {
-  font-size: 14px;
-  color: rgba(0, 255, 24, 1);
-  line-height: 36px;
-  padding: 0 12px;
-  border-radius: 13px;
-  border: 1px solid rgba(0, 255, 30, 1);
-}
-
-.preferential-icon {
-  width: 69px;
-  height: 28px;
-  border-radius: 13px;
-  border: 1px solid rgba(0, 255, 30, 1);
-}
-
-.tax-rates {
-  margin-top: 18px;
-  flex: 1;
-}
-
-.tax-item {
-  font-size: 18px;
-  color: rgba(181, 181, 181, 1);
-  line-height: 36px;
-  margin: 0;
-  display: flex;
-  justify-content: space-between;
-  align-items: baseline;
-}
-
-.tax-label {
-  flex-shrink: 0;
-}
-
-.tax-value {
+  font-size: 22px;
+  font-weight: 600;
   color: #fff;
 }
 
+.preferential-tag {
+  font-size: 12px;
+  color: rgba(0, 255, 24, 1);
+  padding: 2px 10px;
+  border-radius: 4px;
+  background: rgba(0, 255, 24, 0.1);
+  border: 1px solid rgba(0, 255, 24, 0.5);
+}
+
+.tax-item {
+  display: flex;
+  justify-content: space-between;
+  margin-bottom: 12px;
+  font-size: 16px;
+  
+  .tax-label {
+    color: rgba(255, 255, 255, 0.6);
+  }
+  
+  .tax-value {
+    color: #fff;
+    font-weight: 500;
+  }
+}
+
 .divider {
-  width: 100%;
   height: 1px;
-  background-color: rgba(255, 255, 255, 0.15);
-  margin: 18px 0;
+  background: rgba(255, 255, 255, 0.1);
+  margin: 16px 0;
 }
 
 .preferential-policy {
-  font-size: 16px;
+  font-size: 14px;
   color: rgba(153, 153, 153, 1);
-  line-height: 24px;
-  margin: 0;
+  /* 确保文字不会太长破坏布局 */
+  display: -webkit-box;
+  -webkit-line-clamp: 2;
+  -webkit-box-orient: vertical;
+  overflow: hidden;
 }
 </style>
