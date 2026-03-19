@@ -70,11 +70,6 @@ const props = withDefaults(defineProps<Props>(), {
 const flagStyle = computed(() => {
   // 根据国家代码设置不同的国旗样式
   switch (props.countryCode?.toLowerCase()) {
-    case 'eu':
-      return { background: 'linear-gradient(90deg, #003399 33%, #fff 33%, #fff 66%, #ffcc00 66%)' }
-    case 'us':
-    case 'usa':
-      return { background: '#B22234', position: 'relative' }
     default:
       return { background: '#fff' }
   }
