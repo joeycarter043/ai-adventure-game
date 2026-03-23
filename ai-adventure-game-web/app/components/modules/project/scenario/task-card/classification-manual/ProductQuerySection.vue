@@ -1,6 +1,6 @@
 <template>
   <section class="product-query-section">
-    <h2 class="section-title">{{ $t('classification_manual.product_query.title') }}</h2>
+    <h2 class="section-title">商品编码查询</h2>
 
     <div class="search-area">
       <div class="search-box-wrapper">
@@ -14,7 +14,7 @@
         <BaseInput
           :model-value="searchKeyword"
           class="custom-base-input"
-          :placeholder="$t('classification_manual.product_query.search_placeholder')"
+          placeholder="请输入商品名称或关键词进行搜索"
           @update:model-value="$emit('update:searchKeyword', $event)"
         />
       </div>
@@ -23,7 +23,7 @@
         <BaseSelectDropdown
           :model-value="selectedCategory"
           :options="categoryOptions"
-          :placeholder="$t('classification_manual.product_query.all_categories')"
+          placeholder="全部商品"
           @update:model-value="$emit('update:selectedCategory', $event)"
         />
       </div>
@@ -32,25 +32,24 @@
     <div class="product-header">
       <h3 class="main-product-title">{{ productData.name }}</h3>
       <div class="info-row">
-        <span class="product-hint">{{ $t('classification_manual.product_query.product_name_hint') }}</span>
+        <span class="product-hint">用于查询的商品名称</span>
         <span class="product-code-label">
-          {{ $t('classification_manual.product_query.product_code') }}：
-          <span class="code-number">{{ productData.code }}</span>
+          10位商品编码：{{ productData.code }}
         </span>
       </div>
     </div>
 
     <div class="detail-cards-container">
       <div class="detail-card">
-        <h4 class="card-label">{{ $t('classification_manual.product_query.description_title') }}</h4>
+        <h4 class="card-label">商品描述</h4>
         <p class="card-text">{{ productData.description }}</p>
       </div>
       <div class="detail-card">
-        <h4 class="card-label">{{ $t('classification_manual.product_query.classification_basis') }}</h4>
+        <h4 class="card-label">归类依据</h4>
         <p class="card-text">{{ productData.basis }}</p>
       </div>
       <div class="detail-card">
-        <h4 class="card-label">{{ $t('classification_manual.product_query.notes_title') }}</h4>
+        <h4 class="card-label">注意事项</h4>
         <p class="card-text">{{ productData.notes }}</p>
       </div>
     </div>
@@ -81,8 +80,8 @@ defineEmits(['update:searchKeyword', 'update:selectedCategory'])
 $unified-height: 48px;
 
 .product-query-section {
-  background: rgba(16, 32, 64, 0.4);
-  border: 1px solid rgba(255, 255, 255, 0.1);
+  background: rgba(40, 72, 122, 0.2);
+  border: 1px solid #5A85BE;
   border-radius: 8px;
   padding: 32px 40px 45px 40px;
   color: #fff;
@@ -154,8 +153,6 @@ $unified-height: 48px;
   }
 }
 
-/* --- 下面的代码和你原本的一致，保持即可 --- */
-
 .product-header {
   margin-top: 32px;
   margin-bottom: 20px;
@@ -198,7 +195,7 @@ $unified-height: 48px;
 .detail-card {
   flex: 1;
   background: linear-gradient(180deg, rgba(40, 72, 122, 0.4) 0%, rgba(22, 50, 84, 0.4) 100%);
-  border: 1px solid rgba(255, 255, 255, 0.15);
+  border: 1px solid #5A85BE;
   border-radius: 24px;
   padding: 26px 20px;
   display: flex;

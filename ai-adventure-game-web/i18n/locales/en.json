@@ -68,7 +68,9 @@
       "current": "Sea Waybill Mystery",
       "bill_template": "Sea Waybill Template",
       "trade_terms_guide": "Trade Terms Guide",
-      "classification_manual": "Classification Manual"
+      "classification_manual": "Classification Manual",
+      "route_map": "Route Map",
+      "quiz": "Quiz"
     },
     "important_tips": "Important Tips",
     "my_role": "My Role",

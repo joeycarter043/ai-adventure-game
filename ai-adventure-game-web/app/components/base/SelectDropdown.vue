@@ -202,7 +202,7 @@ onUnmounted(() => {
     rgba(22, 50, 84, 0.4) 100%
   );
   border-radius: 8px;
-  border: 1px solid rgba(255, 255, 255, 0.15);
+  border: 1px solid #5A85BE;
   padding: 0 16px;
   height: v-bind(height);
   cursor: pointer;
@@ -219,7 +219,7 @@ onUnmounted(() => {
 
 .trigger-text {
   font-size: 16px;
-  color: rgba(153, 153, 153, 1);
+  color: rgba(255, 255, 255, 1);
   flex: 1;
   text-align: left;
   overflow: hidden;

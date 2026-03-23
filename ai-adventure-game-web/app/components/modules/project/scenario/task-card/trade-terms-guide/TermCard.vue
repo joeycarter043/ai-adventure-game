@@ -11,8 +11,8 @@
       
       <!-- 术语名称和运输方式 -->
       <div class="term-info">
-        <h3 class="term-name">{{ $t(`trade_terms.terms.${term.code}.name`) }}</h3>
-        <p class="term-transport">{{ $t(`trade_terms.transport.${term.transport}`) }}</p>
+        <h3 class="term-name">{{ term.name }}</h3>
+        <p class="term-transport">{{ transportLabels[term.transport] }}</p>
       </div>
       
       <!-- 展开/收起图标 -->
@@ -45,6 +45,12 @@ interface TradeTerm {
   nameEn: string
   transport: string
   category: string
+}
+
+// 运输方式标签
+const transportLabels: Record<string, string> = {
+  any: '适用于任何运输方式',
+  sea: '仅适用于海运或内河运输'
 }
 
 defineProps<{

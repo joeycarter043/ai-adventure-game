@@ -2,8 +2,8 @@
   <div class="issue-section">
     <!-- ── 第一行标题：签发地点和日期（左） + 正本份数（右） ── -->
     <div class="header-row">
-      <span class="section-label">{{ $t('bill_template.issue_section') }}</span>
-      <span class="section-label originals-title">{{ $t('bill_template.originals_count') }}</span>
+      <span class="section-label">签发地点和日期</span>
+      <span class="section-label originals-title">正本份数</span>
     </div>
 
     <!-- ── 第二行副标签：地点 / 时间（各占左半） | 提单（右半） ── -->
@@ -11,24 +11,24 @@
       <!-- 左侧：地点 + 时间 各占 ~50% -->
       <div class="left-group">
         <div class="field-col">
-          <span class="sub-label">{{ $t('bill_template.issue_place_label') }}</span>
+          <span class="sub-label">地点</span>
           <BaseInput 
             v-model="form.issuePlace" 
-            :placeholder="$t('bill_template.issue_place_placeholder')" 
+            placeholder="请输入签发地点" 
           />
         </div>
         <div class="field-col">
-          <span class="sub-label">{{ $t('bill_template.issue_time_label') }}</span>
+          <span class="sub-label">时间</span>
           <BaseDatePicker 
             v-model="form.issueDate" 
-            :placeholder="$t('bill_template.issue_date_picker')" 
+            placeholder="年 / 月 / 日" 
           />
         </div>
       </div>
 
       <!-- 右侧：提单输入框（短） -->
       <div class="right-group">
-        <span class="sub-label">{{ $t('bill_template.originals_label') }}</span>
+        <span class="sub-label">提单</span>
         <div class="originals-group">
           <BaseInput 
             v-model="form.originalsCount" 
@@ -37,7 +37,7 @@
             max="9" 
             class="originals-input-box"
           />
-          <span class="originals-suffix">{{ $t('bill_template.originals_suffix') }}</span>
+          <span class="originals-suffix">份正本提单</span>
         </div>
       </div>
     </div>
@@ -54,8 +54,8 @@
       >
         <!-- 文字叠层（始终在顶部，图片在底层） -->
         <div class="stamp-labels">
-          <span class="auth-text">{{ $t('bill_template.authorized_signature') }}</span>
-          <span class="carrier-text">{{ $t('bill_template.carrier_stamp') }}</span>
+          <span class="auth-text">AUTHORIZED SIGNATURE</span>
+          <span class="carrier-text">承运人签字盖章</span>
         </div>
 
         <!-- 背景预览图 -->
@@ -67,11 +67,12 @@
             <path d="M14 4v16M6 12l8-8 8 8" stroke="#555" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/>
             <path d="M3 22v1.5A1.5 1.5 0 004.5 25h19a1.5 1.5 0 001.5-1.5V22" stroke="#555" stroke-width="1.8" stroke-linecap="round"/>
           </svg>
-          <span class="upload-hint-text">{{ $t('bill_template.upload_hint') }}</span>
+          <span class="upload-hint-text">点击或拖拽图片至此处
+上传签字盖章</span>
         </div>
 
         <!-- 删除按钮 -->
-        <button v-if="previewUrl" class="remove-btn" @click.stop="clearImage" :title="$t('bill_template.upload_remove')">
+        <button v-if="previewUrl" class="remove-btn" @click.stop="clearImage" title="移除图片">
           <svg width="12" height="12" viewBox="0 0 12 12" fill="none">
             <path d="M1 1l10 10M11 1L1 11" stroke="#fff" stroke-width="1.5" stroke-linecap="round"/>
           </svg>

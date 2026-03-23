@@ -31,7 +31,7 @@ const allScenarios = ref(Array.from({ length: 43 }, (_, i) => ({
   title: `剧情任务 ${i + 1}`,
   description: '这不仅是一场技术的博弈，更是一次智慧的较量。在复杂的报关流程中，你将面临各种突发状况，体验最真实的行业挑战。',
   duration: '120',
-  score: (4 + Math.random()).toFixed(1),
+  score: (4 + (i % 10) / 10).toFixed(1),
   cover: testImg
 })))
 

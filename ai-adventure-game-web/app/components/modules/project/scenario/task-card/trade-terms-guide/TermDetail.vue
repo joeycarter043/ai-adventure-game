@@ -3,13 +3,13 @@
     <div class="detail-content">
       <!-- 定义 -->
       <div class="detail-section">
-        <h4 class="detail-title">{{ $t('trade_terms.detail.definition') }}</h4>
+        <h4 class="detail-title">定义</h4>
         <p class="detail-text">{{ term.definition }}</p>
       </div>
 
       <!-- 卖方责任 -->
       <div class="detail-section">
-        <h4 class="detail-title">{{ $t('trade_terms.detail.seller_responsibility') }}</h4>
+        <h4 class="detail-title">卖方责任</h4>
         <ul class="detail-list">
           <li v-for="(item, index) in term.sellerResponsibility" :key="index">
             {{ item }}
@@ -19,7 +19,7 @@
 
       <!-- 买方责任 -->
       <div class="detail-section">
-        <h4 class="detail-title">{{ $t('trade_terms.detail.buyer_responsibility') }}</h4>
+        <h4 class="detail-title">买方责任</h4>
         <ul class="detail-list">
           <li v-for="(item, index) in term.buyerResponsibility" :key="index">
             {{ item }}
@@ -29,7 +29,7 @@
 
       <!-- 注意事项 -->
       <div class="detail-section">
-        <h4 class="detail-title">{{ $t('trade_terms.detail.notes') }}</h4>
+        <h4 class="detail-title">注意事项</h4>
         <p class="detail-text highlight">{{ term.notes }}</p>
       </div>
     </div>

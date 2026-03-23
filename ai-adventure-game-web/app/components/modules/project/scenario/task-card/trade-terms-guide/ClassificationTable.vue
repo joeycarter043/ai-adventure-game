@@ -1,43 +1,27 @@
 <template>
   <div class="classification-table">
-    <div class="table-container">
-      <!-- 表头 -->
-      <div class="table-row header-row">
-        <div class="table-cell header-cell">{{ $t('trade_terms.table.term') }}</div>
-        <div class="table-cell header-cell">{{ $t('trade_terms.table.transport') }}</div>
-        <div class="table-cell header-cell">{{ $t('trade_terms.table.risk_point') }}</div>
-        <div class="table-cell header-cell">{{ $t('trade_terms.table.export_clearance') }}</div>
-        <div class="table-cell header-cell">{{ $t('trade_terms.table.import_clearance') }}</div>
-        <div class="table-cell header-cell">{{ $t('trade_terms.table.freight_payment') }}</div>
-        <div class="table-cell header-cell">{{ $t('trade_terms.table.insurance') }}</div>
-      </div>
+    <BaseTable :columns="tableColumns" :data="terms">
+      <template #code="{ value }">
+        <span class="term-code">{{ value }}</span>
+      </template>
 
-      <!-- 表体 -->
-      <div 
-        v-for="term in terms" 
-        :key="term.code"
-        class="table-row data-row"
-      >
-        <div class="table-cell term-code">{{ term.code }}</div>
-        <div class="table-cell">{{ $t(`trade_terms.transport.${term.transport}`) }}</div>
-        <div class="table-cell">{{ $t(`trade_terms.risk_points.${term.riskPoint}`) }}</div>
-        <div class="table-cell">{{ $t(`trade_terms.clearance.${term.exportClearance}`) }}</div>
-        <div class="table-cell">{{ $t(`trade_terms.clearance.${term.importClearance}`) }}</div>
-        <div class="table-cell">{{ $t(`trade_terms.freight.${term.freightPayment}`) }}</div>
-        <div class="table-cell">{{ $t(`trade_terms.insurance.${term.insurance}`) }}</div>
-      </div>
-    </div>
+      <template #transport="{ value }">
+        {{ transportLabels[value] || value }}
+      </template>
+
+      <template #riskPoint="{ value }">
+        {{ riskPointLabels[value] || value }}
+      </template>
+      
+      </BaseTable>
   </div>
 </template>
 
 <script setup lang="ts">
-// 术语数据接口
+
 interface TradeTerm {
   code: string
-  name: string
-  nameEn: string
   transport: string
-  category: string
   riskPoint: string
   exportClearance: string
   importClearance: string
@@ -45,88 +29,40 @@ interface TradeTerm {
   insurance: string
 }
 
-defineProps<{
+const props = defineProps<{
   terms: TradeTerm[]
 }>()
+
+// 列配置
+const tableColumns = [
+  { label: '术语', key: 'code', width: '10%' },
+  { label: '运输方式', key: 'transport', width: '25%' },
+  { label: '风险转移点', key: 'riskPoint', width: '14%' },
+  { label: '出口清关', key: 'exportClearance', width: '12%' },
+  { label: '进口清关', key: 'importClearance', width: '12%' },
+  { label: '运费支付', key: 'freightPayment', width: '12%' },
+  { label: '保险责任', key: 'insurance', width: '12%' },
+]
+
+// 映射表（保持不变）
+const transportLabels: Record<string, string> = {
+  any: '适用于任何运输方式',
+  sea: '仅适用于海运或内河运输'
+}
+
+const riskPointLabels: Record<string, string> = {
+  '卖方工厂': '卖方工厂',
+  '交给承运人': '交给承运人',
+  '货物装上船': '货物装上船',
+  '目的地': '目的地',
+  '目的地卸货后': '目的地卸货后'
+}
+
+// 提示：可以在这里利用 computed 预处理 terms 数据，
+// 这样就不用在 template 里写一堆插槽来处理 Labels 了。
 </script>
 
 <style scoped lang="scss">
-.classification-table {
-  width: 100%;
-  margin-top: 24px;
-}
-
-.table-container {
-  width: 100%;
-  border-top: 1px solid rgba(255, 255, 255, 0.15);
-  border-bottom: 1px solid rgba(255, 255, 255, 0.15);
-  border-left: none;
-  border-right: none;
-  overflow: hidden;
-}
-
-.table-row {
-  display: flex;
-  width: 100%;
-  
-  &.header-row {
-    background: linear-gradient(
-      rgba(40, 72, 122, 0.5) 0%,
-      rgba(40, 72, 122, 0.5) 0%,
-      rgba(22, 50, 84, 0.5) 100%,
-      rgba(22, 50, 84, 0.5) 100%
-    );
-  }
-
-  &.data-row {
-    border-top: 1px solid rgba(255, 255, 255, 0.15);
-    background-color: transparent;
-  }
-}
-
-.table-cell {
-  padding: 12px 16px;
-  font-size: 18px;
-  color: #fff;
-  line-height: 30px;
-  display: flex;
-  align-items: center;
-
-  &:nth-child(1) {
-    width: 10%;
-    justify-content: center;
-  }
-  &:nth-child(2) {
-    width: 25%;
-    justify-content: center;
-  }
-  &:nth-child(3) {
-    width: 14%;
-    justify-content: center;
-  }
-  &:nth-child(4) {
-    width: 12%;
-    justify-content: center;
-  }
-  &:nth-child(5) {
-    width: 12%;
-    justify-content: center;
-  }
-  &:nth-child(6) {
-    width: 12%;
-    justify-content: center;
-  }
-  &:nth-child(7) {
-    width: 12%;
-    justify-content: center;
-  }
-}
-
-.header-cell {
-  font-weight: 700;
-  font-size: 20px;
-}
-
 .term-code {
   font-weight: 700;
   color: rgba(0, 255, 252, 0.9);

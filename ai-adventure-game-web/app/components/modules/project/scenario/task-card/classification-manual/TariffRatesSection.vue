@@ -2,7 +2,7 @@
   <section class="tariff-rates-section">
     <div class="section-container">
       <div class="section-title-wrapper">
-        <h2 class="section-title">{{ $t('classification_manual.tariff_rates.title') }}</h2>
+        <h2 class="section-title">各国税率及优惠政策</h2>
       </div>
 
       <div class="rates-grid">
@@ -21,7 +21,7 @@
 
       <div class="view-more-container">
         <div v-if="hasMore" class="view-more-btn" @click="loadMore">
-          <span class="view-more-text">{{ $t('classification_manual.tariff_rates.view_more') }}</span>
+          <span class="view-more-text">查看更多国家</span>
           <svg width="19" height="10" viewBox="0 0 19 10" fill="none" class="view-more-icon">
             <path d="M1 1L9.5 9L18 1" stroke="white" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
           </svg>
@@ -136,7 +136,7 @@ const loadMore = () => {
   /* 还原设计稿外边框 */
   background: rgba(40, 72, 122, 0.2);
   border-radius: 8px;
-  border: 1px solid rgba(255, 255, 255, 0.15);
+  border: 1px solid #5A85BE;
   padding: 32px 3.5% 45px 3.5%;
   position: relative;
 }

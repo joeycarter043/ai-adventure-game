@@ -1,22 +1,22 @@
 <template>
   <div class="bill-header">
-    <h1 class="bill-title">{{ $t('bill_template.title') }}</h1>
-    <p class="bill-title-en">{{ $t('bill_template.title_en') }}</p>
+    <h1 class="bill-title">海运提单</h1>
+    <p class="bill-title-en">MARITIME BILL OF LADING</p>
 
     <div class="field-row two-col">
-      <span class="field-label">{{ $t('bill_template.bl_no_label') }}</span>
-      <span class="field-label">{{ $t('bill_template.issue_date_label') }}</span>
+      <span class="field-label">提单编号</span>
+      <span class="field-label">签发日期</span>
     </div>
 
     <div class="field-row two-col">
       <BaseInput
         v-model="form.blNo"
-        :placeholder="$t('bill_template.bl_no_placeholder')"
+        placeholder="请输入提单编号"
       />
       
       <BaseDatePicker
         v-model="form.issueDate"
-        :placeholder="$t('bill_template.issue_date_placeholder')"
+        placeholder="年 / 月 / 日"
       />
     </div>
 

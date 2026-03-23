@@ -2,7 +2,7 @@
   <section class="inspection-section">
     <div class="section-container">
       <div class="section-title-wrapper">
-        <h2 class="section-title">{{ $t('classification_manual.inspection.title') }}</h2>
+        <h2 class="section-title">检验检疫要求</h2>
       </div>
 
       <div class="inspection-layout">
@@ -14,7 +14,7 @@
                 <path d="M8 12L11 15L16 9" stroke="#00FFFC" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
               </svg>
             </div>
-            <span class="subtitle-text">{{ $t('classification_manual.inspection.import_inspection') }}</span>
+            <span class="subtitle-text">进口检验检疫</span>
           </div>
 
           <div class="inspection-items" v-if="data?.items?.length">
@@ -46,7 +46,7 @@
                 <path d="M9 16H13" stroke="#00FFFC" stroke-width="2" stroke-linecap="round"/>
               </svg>
             </div>
-            <span class="subtitle-text">{{ $t('classification_manual.inspection.documents_list') }}</span>
+            <span class="subtitle-text">所需证件清单</span>
           </div>
 
           <div class="documents-list" v-if="data?.documents?.length">
@@ -102,7 +102,7 @@ defineProps<{
 /* 外层边框容器 - 统一设计稿风格 */
 .section-container {
   background: rgba(40, 72, 122, 0.2);
-  border: 1px solid rgba(255, 255, 255, 0.15);
+  border: 1px solid #5A85BE;
   border-radius: 8px;
   padding: 32px 3.5% 45px 3.5%;
 }

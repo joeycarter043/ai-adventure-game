@@ -19,23 +19,23 @@
 
       <div v-for="(row, index) in rows" :key="row.id" class="table-row">
         <div class="table-cell">
-          <BaseInput v-model="row.marks" :placeholder="$t('bill_template.cargo_marks_placeholder')" />
+          <BaseInput v-model="row.marks" placeholder="请输入唛头和号码" />
         </div>
         <div class="table-cell">
-          <BaseInput v-model="row.packages" :placeholder="$t('bill_template.cargo_packages_placeholder')" />
+          <BaseInput v-model="row.packages" placeholder="请输入件数和包装类型" />
         </div>
         <div class="table-cell">
-          <BaseInput v-model="row.description" :placeholder="$t('bill_template.cargo_description_placeholder')" />
+          <BaseInput v-model="row.description" placeholder="请输入货物描述" />
         </div>
         <div class="table-cell">
-          <BaseInput v-model="row.weight" :placeholder="$t('bill_template.cargo_weight_placeholder')" />
+          <BaseInput v-model="row.weight" placeholder="请输入毛重" />
         </div>
         <div class="table-cell">
-          <BaseInput v-model="row.measurement" :placeholder="$t('bill_template.cargo_measurement_placeholder')" />
+          <BaseInput v-model="row.measurement" placeholder="请输入体积" />
         </div>
 
         <div class="table-cell action-cell">
-          <button class="remove-btn" @click="removeRow(index)" :title="$t('common.delete_row')">
+          <button class="remove-btn" @click="removeRow(index)" title="删除行">
             <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5">
               <path d="M18 6L6 18M6 6l12 12" />
             </svg>
@@ -45,7 +45,7 @@
     </BaseEditableTable>
 
     <BaseButtonMiniBtn :icon="iconAdd" class="mt-20" @click="addRow">
-      {{ $t('common.add_row') }}
+      添加行
     </BaseButtonMiniBtn>
 
     <div class="bottom-divider" />
@@ -124,7 +124,7 @@ const removeRow = (index: number) => {
 :deep(.table-cell) {
   .base-input-wrapper {
     background: rgba(40, 72, 122, 0.15);
-    border: 1px solid rgba(0, 174, 255, 0.2);
+    border: 1px solid #5A85BE;
     height: 38px;
   }
 }

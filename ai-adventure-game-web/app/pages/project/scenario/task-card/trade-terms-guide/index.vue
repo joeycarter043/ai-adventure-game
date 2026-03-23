@@ -19,10 +19,8 @@
 import TradeTermsGuide from '@/components/modules/project/scenario/task-card/trade-terms-guide/TradeTermsGuide.vue'
 import TaskCardSubHeader from '@/components/modules/project/scenario/task-card/TaskCardSubHeader.vue'
 
-const { t } = useI18n()
-
 // 动态面包屑标题 - 使用 computed 确保响应式更新
-const taskTitle = ref(t('scenario_task.breadcrumb.current'))
+const taskTitle = ref('海运提单之谜')
 provide('dynamicBreadcrumbTitle', taskTitle)
 </script>
 
@@ -31,12 +29,9 @@ provide('dynamicBreadcrumbTitle', taskTitle)
   display: flex;
   flex-direction: column;
   width: 100%;
-  max-width: 1920px;
-  min-width: 1440px;
   margin: 0 auto;
   height: 100%;
   overflow: hidden;
-  background-color: rgba(19, 34, 57, 1);
 }
 
 .trade-terms-scroll {
@@ -47,9 +42,11 @@ provide('dynamicBreadcrumbTitle', taskTitle)
   &::-webkit-scrollbar {
     width: 6px;
   }
+
   &::-webkit-scrollbar-track {
     background: rgba(0, 0, 0, 0.2);
   }
+
   &::-webkit-scrollbar-thumb {
     background: rgba(0, 174, 255, 0.3);
     border-radius: 3px;
@@ -57,17 +54,12 @@ provide('dynamicBreadcrumbTitle', taskTitle)
 }
 
 .trade-terms-inner {
-  padding: 20px 68px 40px;
+  padding: 20px 20px 40px;
 }
 
 .trade-terms-container {
-  background: linear-gradient(
-    rgba(40, 72, 122, 0.4) 0%,
-    rgba(40, 72, 122, 0.4) 0%,
-    rgba(22, 50, 84, 0.4) 100%,
-    rgba(22, 50, 84, 0.4) 100%
-  );
+  background: rgba(40, 72, 122, 0.2);
   border-radius: 8px;
-  border: 1px solid rgba(255, 255, 255, 0.1);
+  border: 1px solid #5A85BE;
 }
 </style>

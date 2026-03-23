@@ -43,7 +43,7 @@ withDefaults(defineProps<Props>(), {
 <style scoped lang="scss">
 .base-editable-table {
   width: 100%;
-  border: 1px solid rgba(0, 174, 255, 0.15);
+  border: 1px solid #5A85BE;
   border-radius: 4px;
   overflow: hidden;
 }
@@ -51,13 +51,13 @@ withDefaults(defineProps<Props>(), {
 .table-header-row {
   display: flex;
   background: rgba(40, 72, 122, 0.1);
-  border-bottom: 1px solid rgba(0, 174, 255, 0.2);
+  border-bottom: 1px solid #5A85BE;
 }
 
 .header-col {
   flex: 1;
   padding: 12px 16px;
-  border-right: 1px solid rgba(0, 174, 255, 0.15);
+  border-right: 1px solid #5A85BE;
   display: flex;
   flex-direction: column;
   justify-content: center;
@@ -82,14 +82,14 @@ withDefaults(defineProps<Props>(), {
 /* 这里的全局样式利用 :deep 穿透，确保插槽内的行和格子样式统一 */
 :deep(.table-row) {
   display: flex;
-  border-bottom: 1px solid rgba(0, 174, 255, 0.1);
+  border-bottom: 1px solid #5A85BE;
   &:last-child { border-bottom: none; }
 }
 
 :deep(.table-cell) {
   flex: 1;
   padding: 10px 16px;
-  border-right: 1px solid rgba(0, 174, 255, 0.15);
+  border-right: 1px solid #5A85BE;
   display: flex;
   align-items: center;
   

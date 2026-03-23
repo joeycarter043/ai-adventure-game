@@ -15,4 +15,6 @@ export const BREADCRUMB_MAP: Record<string, string> = {
   '/project/scenario/task-card/bill-template': 'scenario_task.breadcrumb.bill_template',
   '/project/scenario/task-card/trade-terms-guide': 'scenario_task.breadcrumb.trade_terms_guide',
   '/project/scenario/task-card/classification-manual': 'scenario_task.breadcrumb.classification_manual',
+  '/project/scenario/task-card/route-map': 'scenario_task.breadcrumb.route_map',
+  '/project/scenario/task-card/quiz': 'scenario_task.breadcrumb.quiz',
 }

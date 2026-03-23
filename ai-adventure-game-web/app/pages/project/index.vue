@@ -31,7 +31,7 @@ const initData = () => {
       title: `实训项目 - ${i}`,
       description: '项目描述内容...',
       duration: '120',
-      score: '4.5',
+      score: (4 + (i % 10) / 10).toFixed(1),
       cover: testImg,
       tags: ['物流', '实操'],
       startTime: '2026-01-01',

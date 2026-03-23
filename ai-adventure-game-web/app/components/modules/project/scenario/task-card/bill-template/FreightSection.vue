@@ -1,13 +1,13 @@
 <template>
   <div class="freight-section">
     <div class="section-header">
-      <span class="section-label">{{ $t('bill_template.freight_section') }}</span>
+      <span class="section-label">运费和费用 / FREIGHT & CHARGES</span>
     </div>
 
     <!-- 运费支付方式 + 货币 labels -->
     <div class="two-col-labels">
-      <span class="sub-label">{{ $t('bill_template.freight_payment_label') }}</span>
-      <span class="sub-label">{{ $t('bill_template.currency_label') }}</span>
+      <span class="sub-label">运费支付方式</span>
+      <span class="sub-label">货币</span>
     </div>
 
     <!-- 运费支付方式 Select + 货币 Select -->
@@ -15,7 +15,7 @@
       <!-- 运费支付方式 -->
       <SelectRoot v-model="form.paymentMethod">
         <SelectTrigger class="select-trigger">
-          <SelectValue :placeholder="$t('bill_template.freight_payment_placeholder')" />
+          <SelectValue placeholder="请选择" />
           <SelectIcon class="chevron-icon">
             <svg width="12" height="7" viewBox="0 0 12 7" fill="none">
               <path d="M1 1l5 5 5-5" stroke="#aaa" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
@@ -66,14 +66,14 @@
     </div>
 
     <!-- 运费金额 label -->
-    <span class="sub-label mt-20">{{ $t('bill_template.freight_amount_label') }}</span>
+    <span class="sub-label mt-20">运费金额</span>
 
     <!-- 运费金额 input，宽度与左侧 select 对齐（约 50% - gap/2） -->
     <div class="mt-10">
       <input
         v-model="form.freightAmount"
         class="input-field half-width"
-        :placeholder="$t('bill_template.freight_amount_placeholder')"
+        placeholder="请输入运费金额"
         type="number"
         min="0"
       />
@@ -90,18 +90,16 @@ import {
   SelectItem, SelectItemText, SelectItemIndicator,
 } from 'radix-vue'
 
-const { t } = useI18n()
-
 const paymentOptions = computed(() => [
-  { value: 'prepaid', label: t('bill_template.payment_prepaid') },
-  { value: 'collect', label: t('bill_template.payment_collect') },
+  { value: 'prepaid', label: '预付（Prepaid）' },
+  { value: 'collect', label: '到付（Collect）' },
 ])
 
 const currencyOptions = computed(() => [
-  { value: 'USD', label: t('bill_template.currency_usd') },
-  { value: 'CNY', label: t('bill_template.currency_cny') },
-  { value: 'EUR', label: t('bill_template.currency_eur') },
-  { value: 'GBP', label: t('bill_template.currency_gbp') },
+  { value: 'USD', label: '美元/USD' },
+  { value: 'CNY', label: '人民币/CNY' },
+  { value: 'EUR', label: '欧元/EUR' },
+  { value: 'GBP', label: '英镑/GBP' },
 ])
 
 const form = reactive({
@@ -152,7 +150,7 @@ const form = reactive({
   width: 100%;
   height: 48px;
   border-radius: 8px;
-  border: 1px solid rgba(0, 0, 0, 1);
+  border: 1px solid #5A85BE;
   background: linear-gradient(rgba(40, 72, 122, 0.22), rgba(22, 50, 84, 0.22));
   color: #fff;
   font-size: 14px;
@@ -241,7 +239,7 @@ const form = reactive({
 .input-field {
   height: 48px;
   border-radius: 8px;
-  border: 1px solid rgba(0, 0, 0, 1);
+  border: 1px solid #5A85BE;
   background: linear-gradient(rgba(40, 72, 122, 0.22), rgba(22, 50, 84, 0.22));
   color: #fff;
   font-size: 14px;

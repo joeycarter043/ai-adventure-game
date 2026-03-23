@@ -68,7 +68,9 @@
       "current": "海运提单之谜",
       "bill_template": "海运运单模板填制",
       "trade_terms_guide": "贸易术语指南",
-      "classification_manual": "商品归类查询手册"
+      "classification_manual": "商品归类查询手册",
+      "route_map": "航线地图",
+      "quiz": "答题"
     },
     "important_tips": "重要提示",
     "my_role": "我的角色",

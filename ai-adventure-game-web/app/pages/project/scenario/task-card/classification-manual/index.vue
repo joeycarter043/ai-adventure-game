@@ -19,10 +19,8 @@
 import ClassificationManual from '@/components/modules/project/scenario/task-card/classification-manual/ClassificationManual.vue'
 import TaskCardSubHeader from '@/components/modules/project/scenario/task-card/TaskCardSubHeader.vue'
 
-const { t } = useI18n()
-
 // 动态面包屑标题 - 使用 computed 确保响应式更新
-const taskTitle = ref(t('scenario_task.breadcrumb.current'))
+const taskTitle = ref('海运提单之谜')
 provide('dynamicBreadcrumbTitle', taskTitle)
 </script>
 
@@ -31,12 +29,9 @@ provide('dynamicBreadcrumbTitle', taskTitle)
   display: flex;
   flex-direction: column;
   width: 100%;
-  max-width: 1920px;
-  min-width: 1440px;
   margin: 0 auto;
   height: 100%;
   overflow: hidden;
-  background-color: rgba(19, 34, 57, 1);
 }
 
 .classification-manual-scroll {
@@ -57,7 +52,7 @@ provide('dynamicBreadcrumbTitle', taskTitle)
 }
 
 .classification-manual-inner {
-  padding: 20px 68px 40px;
+  padding: 20px 20px 40px;
 }
 
 .classification-manual-container {

@@ -4,33 +4,33 @@
 
     <div class="transport-header-row">
       <div class="header-left">
-        <span class="section-label">{{ $t('bill_template.transport_section') }}</span>
-        <span class="sub-label mt-12">{{ $t('bill_template.vessel_label') }}</span>
+        <span class="section-label">运输信息 / TRANSPORT DETAILS</span>
+        <span class="sub-label mt-12">船名 / VESSEL</span>
       </div>
-      <span class="sub-label mt-38">{{ $t('bill_template.discharge_port_label') }}</span>
+      <span class="sub-label mt-38">卸货港 / PORT OF DISCHARGE</span>
     </div>
 
     <div class="field-row mt-8">
-      <BaseInput v-model="form.vessel" :placeholder="$t('bill_template.vessel_placeholder')" />
-      <BaseInput v-model="form.dischargePort" :placeholder="$t('bill_template.discharge_port_placeholder')" />
-    </div>
-
-    <div class="field-row label-row mt-20">
-      <span class="sub-label">{{ $t('bill_template.voyage_label') }}</span>
-      <span class="sub-label">{{ $t('bill_template.delivery_place_label') }}</span>
-    </div>
-    <div class="field-row mt-8">
-      <BaseInput v-model="form.voyage" :placeholder="$t('bill_template.voyage_placeholder')" />
-      <BaseInput v-model="form.deliveryPlace" :placeholder="$t('bill_template.delivery_place_placeholder')" />
+      <BaseInput v-model="form.vessel" placeholder="请输入船名" />
+      <BaseInput v-model="form.dischargePort" placeholder="请输入卸货港" />
     </div>
 
     <div class="field-row label-row mt-20">
-      <span class="sub-label">{{ $t('bill_template.loading_port_label') }}</span>
-      <span class="sub-label">{{ $t('bill_template.final_dest_label') }}</span>
+      <span class="sub-label">航次 / VOYAGE NO.</span>
+      <span class="sub-label">交货地点 / PLACE OF DELIVERY</span>
     </div>
     <div class="field-row mt-8">
-      <BaseInput v-model="form.loadingPort" :placeholder="$t('bill_template.loading_port_placeholder')" />
-      <BaseInput v-model="form.finalDest" :placeholder="$t('bill_template.final_dest_placeholder')" />
+      <BaseInput v-model="form.voyage" placeholder="请输入航次" />
+      <BaseInput v-model="form.deliveryPlace" placeholder="请输入交货地点" />
+    </div>
+
+    <div class="field-row label-row mt-20">
+      <span class="sub-label">装货港 / PORT OF LOADING</span>
+      <span class="sub-label">最终目的地 / FINAL DESTINATION</span>
+    </div>
+    <div class="field-row mt-8">
+      <BaseInput v-model="form.loadingPort" placeholder="请输入装货港" />
+      <BaseInput v-model="form.finalDest" placeholder="请输入最终目的地" />
     </div>
 
     <div class="divider mt-16" />

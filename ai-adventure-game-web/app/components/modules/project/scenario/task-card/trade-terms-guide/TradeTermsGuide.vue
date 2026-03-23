@@ -2,15 +2,15 @@
   <div class="trade-terms-guide">
     <!-- 贸易术语概述 -->
     <section class="overview-section">
-      <h2 class="section-title">{{ $t('trade_terms.overview.title') }}</h2>
+      <h2 class="section-title">贸易术语概述</h2>
       <p class="section-description">
-        {{ $t('trade_terms.overview.description') }}
+        国际贸易术语（Incoterms）是国际商会（ICC）制定的用于确定买卖双方责任、费用和风险的标准条款。
       </p>
     </section>
 
     <!-- 术语分类标题 -->
     <section class="classification-title-section">
-      <h2 class="section-title">{{ $t('trade_terms.classification_title') }}</h2>
+      <h2 class="section-title">术语分类</h2>
     </section>
 
     <!-- 术语分类 Tab -->
@@ -21,7 +21,7 @@
         :class="['tab-item', { active: activeTab === tab.key }]"
         @click="activeTab = tab.key"
       >
-        {{ $t(`trade_terms.tabs.${tab.key}`) }}
+        {{ tabLabels[tab.key] }}
       </button>
     </div>
 
@@ -47,7 +47,7 @@
 
     <!-- 分类表格标题 -->
     <section class="classification-table-section">
-      <h2 class="section-title">{{ $t('trade_terms.classification_table_title') }}</h2>
+      <h2 class="section-title">分类对比表</h2>
     </section>
 
     <!-- 分类对比表格 -->
@@ -57,6 +57,14 @@
 
 <script setup lang="ts">
 import { ref, computed } from 'vue'
+
+// Tab 标签映射
+const tabLabels: Record<string, string> = {
+  all: '全部',
+  maritime: '海运',
+  land: '陆运',
+  multimodal: '多式联运'
+}
 
 // 术语数据接口
 interface TradeTerm {

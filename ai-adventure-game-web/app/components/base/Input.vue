@@ -46,7 +46,7 @@ const onInput = (e: Event) => {
 .base-input-wrapper {
   height: v-bind(height);
   border-radius: 8px;
-  border: 1px solid rgba(0, 0, 0, 1);
+  border: 1px solid #5A85BE;
   background: linear-gradient(rgba(40, 72, 122, 0.22), rgba(22, 50, 84, 0.22));
   transition: all 0.2s ease;
   display: flex;

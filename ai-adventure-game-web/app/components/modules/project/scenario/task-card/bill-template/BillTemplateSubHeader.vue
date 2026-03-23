@@ -6,15 +6,15 @@
     <template #right>
       <div class="header-action-group">
         <BaseButtonMiniBtn @click="$emit('save-draft')">
-          {{ $t('bill_template.btn_save_draft') }}
+          保存草稿
         </BaseButtonMiniBtn>
 
         <BaseButtonMiniBtn @click="$emit('submit')">
-          {{ $t('bill_template.btn_submit') }}
+          提交
         </BaseButtonMiniBtn>
 
         <BaseButtonMiniBtn @click="$emit('export')">
-          {{ $t('bill_template.btn_export') }}
+          导出
         </BaseButtonMiniBtn>
       </div>
     </template>

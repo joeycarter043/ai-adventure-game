@@ -32,6 +32,7 @@
             :icon="tool.icon"
             :label="tool.label"
             :active="tool.active"
+            @click="handleToolClick(tool)"
           />
         </div>
       </div>
@@ -41,6 +42,7 @@
 
 <script setup lang="ts">
 import { computed } from 'vue'
+import { useRouter } from 'vue-router'
 import { useI18n } from 'vue-i18n'
 import ClueItem from './subcomponents/ClueItem.vue'
 import ToolboxItem from './subcomponents/ToolboxItem.vue'
@@ -51,6 +53,7 @@ import iconTermDictionary from './assets/icon_term_dictionary.png'
 import iconClassificationManual from './assets/icon_classification_manual.png'
 import iconRouteMap from './assets/icon_route_map.png'
 
+const router = useRouter()
 const { t } = useI18n()
 
 const clues = computed(() => [
@@ -61,11 +64,17 @@ const clues = computed(() => [
 ])
 
 const tools = computed(() => [
-  { icon: iconBillTemplate, label: t('scenario_task.toolbox_items.bill_template'), active: true },
-  { icon: iconTermDictionary, label: t('scenario_task.toolbox_items.term_dictionary'), active: false },
-  { icon: iconClassificationManual, label: t('scenario_task.toolbox_items.classification_manual'), active: false },
-  { icon: iconRouteMap, label: t('scenario_task.toolbox_items.route_map'), active: false }
+  { icon: iconBillTemplate, label: t('scenario_task.toolbox_items.bill_template'), active: true, path: '/project/scenario/task-card/bill-template' },
+  { icon: iconTermDictionary, label: t('scenario_task.toolbox_items.term_dictionary'), active: false, path: '/project/scenario/task-card/trade-terms-guide' },
+  { icon: iconClassificationManual, label: t('scenario_task.toolbox_items.classification_manual'), active: false, path: '/project/scenario/task-card/classification-manual' },
+  { icon: iconRouteMap, label: t('scenario_task.toolbox_items.route_map'), active: false, path: '/project/scenario/task-card/route-map' }
 ])
+
+function handleToolClick(tool: { label: string; path: string }) {
+  if (tool.path) {
+    router.push(tool.path)
+  }
+}
 </script>
 
 <style scoped lang="scss">

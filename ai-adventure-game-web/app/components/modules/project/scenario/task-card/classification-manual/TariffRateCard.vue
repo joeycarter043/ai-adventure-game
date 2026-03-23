@@ -15,15 +15,15 @@
     <!-- 税率信息 -->
     <div class="tax-rates">
       <p class="tax-item">
-        <span class="tax-label">{{ $t('classification_manual.tariff_rates.import_duty') }}:</span>
+        <span class="tax-label">进口关税:</span>
         <span class="tax-value">{{ importDuty }}%</span>
       </p>
       <p class="tax-item">
-        <span class="tax-label">{{ $t('classification_manual.tariff_rates.vat') }}:</span>
+        <span class="tax-label">增值税:</span>
         <span class="tax-value">{{ vat }}%</span>
       </p>
       <p class="tax-item">
-        <span class="tax-label">{{ $t('classification_manual.tariff_rates.consumption_tax') }}:</span>
+        <span class="tax-label">消费税:</span>
         <span class="tax-value">{{ consumptionTax }}%</span>
       </p>
     </div>
@@ -33,7 +33,7 @@
 
     <!-- 优惠政策 -->
     <p class="preferential-policy">
-      {{ $t(`classification_manual.tariff_rates.${hasPreferential ? 'preferential_policy' : 'no_preferential'}`) }}
+      {{ hasPreferential ? '优惠政策: 符合原产地规则可享受关税减免' : '优惠政策: 无特殊优惠' }}
     </p>
   </div>
 </template>
@@ -85,7 +85,7 @@ const flagStyle = computed(() => {
     rgba(22, 50, 84, 0.4) 100%
   );
   border-radius: 20px; /* 稍微减小圆角，更符合一般设计规范，若需还原30px可改回 */
-  border: 1px solid rgba(255, 255, 255, 0.15);
+  border: 1px solid #5A85BE;
   padding: 24px;
   display: flex;
   flex-direction: column;

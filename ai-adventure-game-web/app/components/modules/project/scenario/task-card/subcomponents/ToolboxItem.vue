@@ -2,6 +2,7 @@
   <div 
     class="toolbox-item" 
     :class="{ 'toolbox-item--active': active }"
+    @click="handleClick"
   >
     <img class="toolbox-icon" :src="icon" :alt="label" />
     <span 
@@ -14,11 +15,19 @@
 </template>
 
 <script setup lang="ts">
-defineProps<{
+const props = defineProps<{
   icon: string
   label: string
   active?: boolean
 }>()
+
+const emit = defineEmits<{
+  click: []
+}>()
+
+function handleClick() {
+  emit('click')
+}
 </script>
 
 <style scoped lang="scss">

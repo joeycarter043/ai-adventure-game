@@ -37,9 +37,7 @@ import FreightSection from '@/components/modules/project/scenario/task-card/bill
 import IssueSection from '@/components/modules/project/scenario/task-card/bill-template/IssueSection.vue'
 import OperationTips from '@/components/modules/project/scenario/task-card/bill-template/OperationTips.vue'
 
-const { t } = useI18n()
-
-const taskTitle = ref(t('scenario_task.breadcrumb.current'))
+const taskTitle = ref('海运提单之谜')
 provide('dynamicBreadcrumbTitle', taskTitle)
 
 function onSaveDraft() {
@@ -60,12 +58,9 @@ function onExport() {
   display: flex;
   flex-direction: column;
   width: 100%;
-  max-width: 1920px;
-  min-width: 1440px;
   margin: 0 auto;
   height: 100%;
   overflow: hidden;
-  background-color: rgba(19, 34, 57, 1);
 }
 
 .bill-template-scroll {
@@ -83,17 +78,13 @@ function onExport() {
 
 /* 统一的水平 padding — bill-card 和 op-tips 都在这个容器内，边距自然对齐 */
 .bill-template-inner {
-  padding: 20px 68px 0;
+  padding: 20px 20px 0;
 }
 
 .bill-card {
-  background: linear-gradient(
-    180deg,
-    rgba(40, 72, 122, 0.22) 0%,
-    rgba(22, 50, 84, 0.22) 100%
-  );
+  background: rgba(40, 72, 122, 0.2);
   border-radius: 8px;
-  border: 1px solid rgba(0, 0, 0, 1);
+  border: 1px solid #5A85BE;
   padding-bottom: 28px;
 }
 
